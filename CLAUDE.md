@@ -18,9 +18,11 @@ SkylineAlpha is a company website built on a WebGL scroll-driven animation found
 
 ## Design System
 - **Fonts**: Bebas Neue (display), DM Mono (body/UI)
-- **Dark palette**: bg `#0a0a0f`, fg `#e8e4d9`, accent `#c8ff47`
-- **Light palette**: bg `#f0ece3`, fg `#0d0d14`, accent `#3a6e00`
-- **Cards**: Semi-transparent with accent-colored borders, three alignments (left, right, center)
+- **Color scheme**: Monotone grayscale — no chromatic color anywhere (CSS or shader)
+- **Dark palette**: bg `#0a0a0a`, fg `#e0e0e0`, muted `#666666`, accent `#ffffff`
+- **Light palette**: bg `#f0f0f0`, fg `#0d0d0d`, muted `#999999`, accent `#1a1a1a`
+- **Shader palette**: Grayscale cosine palette, white Fresnel rim — no color in `pal()` or lighting
+- **Cards**: Semi-transparent with white/black border depending on theme, three alignments (left, right, center)
 
 ## Shader Details
 The fragment shader uses raymarching with 96 steps against 5 SDF scenes:

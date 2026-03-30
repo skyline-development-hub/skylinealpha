@@ -11,22 +11,22 @@
 :root {
   color-scheme: dark;
 
-  --dark-bg: #0a0a0f;
-  --dark-fg: #e8e4d9;
-  --dark-muted: #6a6a7e;
-  --light-bg: #f0ece3;
-  --light-fg: #0d0d14;
-  --light-muted: #9a9aaa;
+  --dark-bg: #0a0a0a;
+  --dark-fg: #e0e0e0;
+  --dark-muted: #666666;
+  --light-bg: #f0f0f0;
+  --light-fg: #0d0d0d;
+  --light-muted: #999999;
 
-  --accent-dark: #c8ff47;
-  --accent-light: #3a6e00;
+  --accent-dark: #ffffff;
+  --accent-light: #1a1a1a;
 
   --bg: var(--dark-bg);
   --fg: var(--dark-fg);
   --muted: var(--dark-muted);
   --accent: var(--accent-dark);
-  --card-bg: rgba(10, 10, 15, 0.82);
-  --card-border: rgba(200, 255, 71, 0.18);
+  --card-bg: rgba(10, 10, 10, 0.82);
+  --card-border: rgba(255, 255, 255, 0.15);
 
   --font-display: "Bebas Neue", sans-serif;
   --font-mono: "DM Mono", monospace;
@@ -45,8 +45,8 @@
   --fg: var(--light-fg);
   --muted: var(--light-muted);
   --accent: var(--accent-light);
-  --card-bg: rgba(240, 236, 227, 0.88);
-  --card-border: rgba(58, 110, 0, 0.2);
+  --card-bg: rgba(240, 240, 240, 0.88);
+  --card-border: rgba(26, 26, 26, 0.18);
 }
 
 html {

@@ -2,7 +2,7 @@ const canvas = document.getElementById("webgl-canvas");
 const gl = canvas.getContext("webgl", { alpha: false });
 
 if (!gl) {
-  canvas.style.background = "#0a0a0f";
+  canvas.style.background = "#0a0a0a";
   throw new Error("WebGL not supported");
 }
 
@@ -74,7 +74,8 @@ vec3 norm(vec3 p) {
 }
 
 vec3 pal(float t) {
-  return .5 + .5 * cos(TAU * (.9 * t + vec3(0., .15, .25)));
+  float v = .55 + .4 * cos(TAU * .9 * t);
+  return vec3(v);
 }
 
 void main() {
@@ -100,7 +101,7 @@ void main() {
     float dif = clamp(dot(n, l), 0., 1.);
     float spe = pow(clamp(dot(reflect(-l, n), -rd), 0., 1.), 32.);
     float fr  = pow(1. - clamp(dot(-rd, n), 0., 1.), 3.5);
-    col = bc * (dif * .7 + .3) + spe * .5 + fr * vec3(.784, 1., .278) * .6;
+    col = bc * (dif * .7 + .3) + spe * .5 + fr * vec3(1.) * .6;
     col = mix(bg, col, exp(-t * .15));
   }
 
@@ -130,7 +131,7 @@ if (!gl.getProgramParameter(prog, gl.LINK_STATUS))
   console.error(gl.getProgramInfoLog(prog));
 gl.useProgram(prog);
 
-gl.uniform3f(gl.getUniformLocation(prog, "uBg"), 0.039, 0.039, 0.059);
+gl.uniform3f(gl.getUniformLocation(prog, "uBg"), 0.039, 0.039, 0.039);
 
 const buf = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, buf);
@@ -243,7 +244,7 @@ const hexToVec3 = (hex) => {
   return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
 };
 
-const bgColors = { dark: "#0a0a0f", light: "#f0ece3" };
+const bgColors = { dark: "#0a0a0a", light: "#f0f0f0" };
 
 const updateBg = (theme) => {
   const [r, g, b] = hexToVec3(bgColors[theme] ?? bgColors.dark);
