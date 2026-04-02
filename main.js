@@ -172,7 +172,7 @@ window.addEventListener("resize", resize);
 /* ── scroll state (drives shape morphing only) ── */
 
 const N = 5;
-const NAMES = ["SCENE 01", "SCENE 02", "SCENE 03", "SCENE 04", "SCENE 05"];
+const NAMES = ["ORIGIN", "TORUS", "LATTICE", "PRISM", "HELIX"];
 
 let tgt = 0;
 let smooth = 0;
@@ -208,7 +208,7 @@ window.addEventListener(
 /* ── pagination state (independent of scroll) ── */
 
 const panDir = [0, 1, -1, 1, -1];
-let activePage = -1;
+let activePage = 0;
 let targetOff = 0;
 let smoothOff = 0;
 
@@ -241,6 +241,8 @@ document.querySelectorAll('a[href^="#p"]').forEach((a) => {
     openPage(idx);
   });
 });
+
+document.querySelector(".nav-wordmark").addEventListener("click", () => openPage(0));
 
 const onManualScroll = () => closePage();
 window.addEventListener("touchstart", onManualScroll, { passive: true });

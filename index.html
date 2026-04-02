@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SkylineAlpha</title>
+  <title>SkylineAlpha — Infrastructure for What's Next</title>
+  <meta name="description" content="SkylineAlpha builds developer platforms, real-time infrastructure, and edge systems for teams shipping at scale." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <canvas id="webgl-canvas"></canvas>
 
+<nav id="top-nav">
+  <div class="nav-wordmark">SkylineAlpha</div>
+  <div class="nav-links">
+    <a href="#p1" class="nav-link">About</a>
+    <a href="#p2" class="nav-link">Platform</a>
+    <a href="#p3" class="nav-link">Work</a>
+    <a href="#p4" class="nav-link">Contact</a>
+  </div>
+</nav>
+
 <div id="hud">
   <div id="hud-pct">000%</div>
   <div class="progress-bar">
     <div class="progress-fill" id="prog-fill"></div>
   </div>
-  <div class="scene-label" id="scene-name">SCENE 01</div>
+  <div class="scene-label" id="scene-name">ORIGIN</div>
 </div>
 
 <button id="theme-toggle" aria-label="Toggle light/dark mode">
@@ -29,31 +40,30 @@
 </button>
 
 <div id="scene-strip">
-  <div class="scene-dot active"></div>
-  <div class="scene-dot"></div>
-  <div class="scene-dot"></div>
-  <div class="scene-dot"></div>
-  <div class="scene-dot"></div>
+  <div class="scene-dot active" data-label="Home"></div>
+  <div class="scene-dot" data-label="About"></div>
+  <div class="scene-dot" data-label="Platform"></div>
+  <div class="scene-dot" data-label="Work"></div>
+  <div class="scene-dot" data-label="Contact"></div>
 </div>
 
 <div id="scroll-spacer"></div>
 
 <div id="pages">
 
-  <div class="page" data-page="0">
+  <!-- ════ HERO ════ -->
+  <div class="page active" data-page="0">
     <div class="text-card">
-      <div class="tag">SkylineAlpha</div>
-      <h1>SHAPING<br>DIGITAL<br>WORLDS</h1>
+      <div class="tag">Est. 2019 — San Francisco</div>
+      <h1>INFRA&shy;STRUCTURE<br>FOR WHAT'S<br>NEXT</h1>
       <p class="body-text">
-        We build software that moves. Real-time graphics,
-        spatial interfaces, and interactive systems engineered
-        at the boundary of design and computation.
-      </p>
-      <p class="body-text">
-        Scroll to explore, or click a section to dive in.
+        SkylineAlpha builds the invisible architecture behind
+        modern software — developer platforms, real-time data
+        pipelines, and edge systems engineered for teams
+        shipping at scale.
       </p>
       <a class="cta" href="#p1">
-        About us
+        Learn more
         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M1 6h10M6 1l5 5-5 5" />
         </svg>
@@ -61,37 +71,38 @@
     </div>
   </div>
 
+  <!-- ════ ABOUT ════ -->
   <div class="page" data-page="1">
     <div class="text-card right">
       <div class="h-line"></div>
       <div class="tag">01 — About</div>
-      <h2>MOTION<br>SYSTEM</h2>
+      <h2>BUILT BY<br>BUILDERS</h2>
       <p class="body-text">
-        At SkylineAlpha we treat interaction as a living system.
-        Motion, timing, and code work together to create experiences
-        that respond to people rather than simply playing animations.
+        We started SkylineAlpha after spending a decade building
+        internal platforms at companies that outgrew their tools.
+        The pattern was always the same: great engineers stuck
+        maintaining systems that should have been solved already.
       </p>
       <p class="body-text">
-        Our team brings together engineers, designers, and creative
-        technologists who share a belief that the best digital work
-        emerges from disciplined experimentation.
+        Our mission is to remove that friction — ship the hard
+        infrastructure so product teams can focus on what matters.
       </p>
-      <div class="stat-row visible" style="justify-content: flex-end">
+      <div class="stat-row" style="justify-content: flex-end">
         <div class="stat">
-          <span class="stat-num">25+</span>
-          <span class="stat-label">Years</span>
+          <span class="stat-num">86</span>
+          <span class="stat-label">Engineers</span>
         </div>
         <div class="stat">
-          <span class="stat-num">∞</span>
-          <span class="stat-label">Experiments</span>
+          <span class="stat-num">4</span>
+          <span class="stat-label">Offices</span>
         </div>
         <div class="stat">
-          <span class="stat-num">1</span>
-          <span class="stat-label">Team</span>
+          <span class="stat-num">$42M</span>
+          <span class="stat-label">Series B</span>
         </div>
       </div>
       <a class="cta" href="#p2">
-        View work
+        Our platform
         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M1 6h10M6 1l5 5-5 5" />
         </svg>
@@ -99,35 +110,40 @@
     </div>
   </div>
 
+  <!-- ════ PLATFORM ════ -->
   <div class="page" data-page="2">
     <div class="text-card">
       <div class="h-line"></div>
-      <div class="tag">02 — Work</div>
-      <h2>SELECTED<br>PROJECTS</h2>
+      <div class="tag">02 — Platform</div>
+      <h2>FOUR<br>PILLARS</h2>
       <p class="body-text">
-        Brand worlds, installations, WebGL experiments,
-        and interactive systems that connect design and code.
+        A unified infrastructure layer that handles the hardest
+        problems in distributed systems, so your team doesn't have to.
       </p>
-      <div class="project-list visible">
+      <div class="project-list">
         <div class="project-item">
-          <span class="project-name">Meridian UI</span>
-          <span class="project-type">Spatial Interface</span>
+          <span class="project-name">Conduit</span>
+          <span class="project-type">Real-time Data Mesh</span>
         </div>
         <div class="project-item">
-          <span class="project-name">Vanta Protocol</span>
-          <span class="project-type">Real-time Graphics</span>
+          <span class="project-name">Sentinel</span>
+          <span class="project-type">Observability &amp; Alerting</span>
         </div>
         <div class="project-item">
-          <span class="project-name">Onyx Dashboard</span>
-          <span class="project-type">Data Visualization</span>
+          <span class="project-name">Edge Fabric</span>
+          <span class="project-type">Global Edge Compute</span>
         </div>
         <div class="project-item">
-          <span class="project-name">Echo Chamber</span>
-          <span class="project-type">Installation</span>
+          <span class="project-name">Forge</span>
+          <span class="project-type">Developer Platform</span>
         </div>
       </div>
+      <p class="body-text" style="margin-block-start: 1.5rem">
+        Each product works standalone or as part of the integrated
+        SkylineAlpha stack. SOC 2 Type II certified. 99.99% SLA.
+      </p>
       <a class="cta" href="#p3">
-        Our process
+        See our work
         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M1 6h10M6 1l5 5-5 5" />
         </svg>
@@ -135,32 +151,37 @@
     </div>
   </div>
 
+  <!-- ════ WORK ════ -->
   <div class="page" data-page="3">
     <div class="text-card right">
       <div class="h-line"></div>
-      <div class="tag">03 — Process</div>
-      <h2>BUILD<br>REFINE</h2>
+      <div class="tag">03 — Work</div>
+      <h2>CASE<br>STUDIES</h2>
       <p class="body-text">
-        Ideas usually begin small. A fragment shader,
-        a strange interaction, a quick prototype.
-        We build, test, and iterate until the behaviour feels right.
+        Infrastructure disappears when it works. Here's what
+        our customers built on top of ours.
       </p>
-      <div class="step-list visible">
-        <div class="step-item">
-          <span class="step-num">01</span>
-          <span class="step-text">Research &amp; Discovery</span>
+      <div class="case-list">
+        <div class="case-item">
+          <div class="case-header">
+            <span class="case-client">Arcline Health</span>
+            <span class="case-tag">Conduit + Sentinel</span>
+          </div>
+          <p class="case-desc">Migrated 2.4B daily events from Kafka to Conduit. P99 latency dropped from 340ms to 12ms. Zero-downtime cutover.</p>
         </div>
-        <div class="step-item">
-          <span class="step-num">02</span>
-          <span class="step-text">Prototype &amp; Experiment</span>
+        <div class="case-item">
+          <div class="case-header">
+            <span class="case-client">Noma Finance</span>
+            <span class="case-tag">Edge Fabric</span>
+          </div>
+          <p class="case-desc">Global trading API serving 19 regions with sub-5ms response times. Regulatory data residency handled at the edge.</p>
         </div>
-        <div class="step-item">
-          <span class="step-num">03</span>
-          <span class="step-text">Engineer &amp; Refine</span>
-        </div>
-        <div class="step-item">
-          <span class="step-num">04</span>
-          <span class="step-text">Ship &amp; Measure</span>
+        <div class="case-item">
+          <div class="case-header">
+            <span class="case-client">Parallel Studios</span>
+            <span class="case-tag">Forge</span>
+          </div>
+          <p class="case-desc">Developer platform for 400+ engineers. Deploy frequency increased 8x. Mean time to recovery under 4 minutes.</p>
         </div>
       </div>
       <a class="cta" href="#p4">
@@ -172,21 +193,37 @@
     </div>
   </div>
 
+  <!-- ════ CONTACT ════ -->
   <div class="page" data-page="4">
     <div class="text-card">
       <div class="h-line"></div>
       <div class="tag">04 — Contact</div>
-      <h2>LET'S<br>CONNECT</h2>
+      <h2>LET'S<br>BUILD</h2>
       <p class="body-text">
-        Curious about interactive systems, WebGL,
-        or experimental digital work? We would love to hear from you.
+        Whether you're evaluating infrastructure partners or
+        ready to migrate — we'd like to talk.
       </p>
-      <p class="body-text">
-        hello@skylinealpha.com
-      </p>
-      <div class="stat-row visible">
+      <div class="contact-grid">
+        <div class="contact-block">
+          <span class="contact-label">General</span>
+          <span class="contact-value">hello@skylinealpha.com</span>
+        </div>
+        <div class="contact-block">
+          <span class="contact-label">Sales</span>
+          <span class="contact-value">partnerships@skylinealpha.com</span>
+        </div>
+        <div class="contact-block">
+          <span class="contact-label">Careers</span>
+          <span class="contact-value">We're hiring across all teams</span>
+        </div>
+      </div>
+      <div class="stat-row">
         <div class="stat">
-          <span class="stat-num">NY</span>
+          <span class="stat-num">SF</span>
+          <span class="stat-label">San Francisco</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">NYC</span>
           <span class="stat-label">New York</span>
         </div>
         <div class="stat">
@@ -199,7 +236,7 @@
         </div>
       </div>
       <a class="cta" href="#p0">
-        Back to top
+        Back to start
         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M1 6h10M6 1l5 5-5 5" />
         </svg>
@@ -210,7 +247,7 @@
 </div>
 
 <div id="credit">
-  <span>SkylineAlpha</span>
+  <span>SkylineAlpha &mdash; 2026</span>
 </div>
 
 <script src="main.js"></script>
