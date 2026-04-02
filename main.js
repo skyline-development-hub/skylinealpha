@@ -214,6 +214,8 @@ let smoothOff = 0;
 
 const pages = document.querySelectorAll(".page");
 const dots = document.querySelectorAll(".scene-dot");
+const scrollCardsEl = document.getElementById("scroll-cards");
+const scrollCards = document.querySelectorAll(".scroll-card");
 
 const openPage = (index) => {
   if (activePage === index) { closePage(); return; }
@@ -221,12 +223,14 @@ const openPage = (index) => {
   const halfW = canvas.width / (2 * Math.min(canvas.width, canvas.height));
   targetOff = panDir[index] * halfW;
   pages.forEach((p, i) => p.classList.toggle("active", i === index));
+  scrollCardsEl.classList.add("hidden");
 };
 
 const closePage = () => {
   activePage = -1;
   targetOff = 0;
   pages.forEach((p) => p.classList.remove("active"));
+  scrollCardsEl.classList.remove("hidden");
 };
 
 dots.forEach((d, i) => {
@@ -244,6 +248,8 @@ document.querySelectorAll('a[href^="#p"]').forEach((a) => {
 
 document.querySelector(".nav-wordmark").addEventListener("click", () => openPage(0));
 
+scrollCardsEl.classList.add("hidden");
+
 const onManualScroll = () => closePage();
 window.addEventListener("touchstart", onManualScroll, { passive: true });
 
@@ -253,6 +259,8 @@ const progFill = document.getElementById("prog-fill");
 const hudPct = document.getElementById("hud-pct");
 const sceneName = document.getElementById("scene-name");
 
+let currentScene = 0;
+
 const updateHUD = (s) => {
   const p = Math.round(s * 100);
   hudPct.textContent = String(p).padStart(3, "0") + "%";
@@ -260,6 +268,10 @@ const updateHUD = (s) => {
   const si = Math.min(N - 1, Math.floor(s * N));
   sceneName.textContent = NAMES[si];
   dots.forEach((d, i) => d.classList.toggle("active", i === si));
+  if (si !== currentScene) {
+    currentScene = si;
+    scrollCards.forEach((c, i) => c.classList.toggle("active", i === si));
+  }
 };
 
 /* ── theme ── */
