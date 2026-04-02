@@ -342,6 +342,76 @@ h2 {
   margin-block-end: 1.2rem;
 }
 
+.project-list,
+.step-list {
+  margin-block-start: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0;
+  translate: 0 var(--reveal-offset);
+  transition: opacity var(--reveal-duration) ease 0.28s,
+    translate var(--reveal-duration) ease 0.28s;
+}
+
+.project-list.visible,
+.step-list.visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.project-item,
+.step-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: var(--hairline) solid var(--card-border);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.project-item:first-child,
+.step-item:first-child {
+  border-top: var(--hairline) solid var(--card-border);
+}
+
+.project-name {
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+.project-type {
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--accent);
+  line-height: 1;
+  min-width: 2rem;
+}
+
+.step-text {
+  color: var(--fg);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.text-card.right .step-item {
+  flex-direction: row-reverse;
+}
+
+.text-card.right .step-num {
+  text-align: left;
+  min-width: auto;
+  margin-inline-start: 1rem;
+}
+
 .cta {
   display: inline-flex;
   align-items: center;

@@ -225,7 +225,7 @@ const updateHUD = (s) => {
 
 const revealEls = [
   ...document.querySelectorAll(
-    ".tag, h1, h2, .body-text, .stat-row, .cta, .h-line"
+    ".tag, h1, h2, .body-text, .stat-row, .cta, .h-line, .project-list, .step-list"
   )
 ];
 
