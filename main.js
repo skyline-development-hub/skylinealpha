@@ -92,14 +92,6 @@ float noise3(vec3 p) {
     f.z);
 }
 
-/* ── wireframe grid ── */
-
-float grid(vec3 p, float scale, float width) {
-  vec3 g = abs(fract(p * scale) - .5);
-  float d = min(g.x, min(g.y, g.z));
-  return 1. - smoothstep(0., width, d);
-}
-
 /* ── base palette ── */
 
 vec3 pal(float t) {
@@ -136,19 +128,15 @@ void main() {
     float spe = pow(clamp(dot(reflect(-l, n), -rd), 0., 1.), 32.);
     float fr  = pow(1. - NdV, 3.5);
 
-    /* 1 — wireframe grid: stronger at glancing angles */
-    float gw = grid(p, 5., .06);
-    float gwFresnel = gw * (.15 + .6 * (1. - NdV));
-
-    /* 2 — animated noise bands: slow horizontal drift */
+    /* 1 — animated noise bands: slow horizontal drift */
     float bands = noise3(vec3(p.x * 3., p.y * 8. - uT * .08, p.z * 3.));
     float bandMask = smoothstep(.35, .65, bands) * .12;
 
-    /* 3 — edge pulse: a bright ring sweeps the shape */
+    /* 2 — edge pulse: a bright ring sweeps the shape */
     float pulse = sin(p.y * 6. - uT * .6) * .5 + .5;
     pulse = pow(pulse, 12.) * fr * 1.2;
 
-    /* 4 — brushed micro-detail: noise in specular */
+    /* 3 — brushed micro-detail: noise in specular */
     float micro = noise3(p * 28. + uT * .1);
     float brushedSpe = spe * (.7 + .6 * micro);
 
@@ -156,7 +144,6 @@ void main() {
     col = bc * (dif * .65 + .3);
     col += brushedSpe * .5;
     col += fr * vec3(1.) * .5;
-    col += gwFresnel * vec3(1.);
     col += bandMask;
     col += pulse * vec3(1.);
 
