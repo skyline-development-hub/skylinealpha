@@ -175,7 +175,10 @@ const NAMES = ["SCENE 01", "SCENE 02", "SCENE 03", "SCENE 04", "SCENE 05"];
 let tgt = 0;
 let smooth = 0;
 let velocity = 0;
+let targetOff = 0;
+let smoothOff = 0;
 
+const panDir = [0, 1, -1, 1, -1];
 const ease = 0.1;
 const mq = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -201,6 +204,7 @@ window.addEventListener(
         : e.deltaY;
     velocity += delta;
     velocity = Math.max(-600, Math.min(600, velocity));
+    targetOff = 0;
   },
   { passive: false }
 );
@@ -296,16 +300,13 @@ const frame = (now) => {
 
   updateHUD(smooth);
 
-  const panDir = [0, 1, -1, 1, -1];
-  const halfW = canvas.width / (2 * Math.min(canvas.width, canvas.height));
-  const dir = panDir[si] + (panDir[Math.min(si + 1, N - 1)] - panDir[si]) * bl;
-  const off = dir * halfW;
+  smoothOff += (targetOff - smoothOff) * (1 - Math.exp(-dt * 5));
 
   gl.uniform1f(uTi, (now - t0) / 1000);
   gl.uniform1f(uScroll, smooth);
   gl.uniform1f(uScene, si);
   gl.uniform1f(uBlend, bl);
-  gl.uniform1f(uOff, off);
+  gl.uniform1f(uOff, smoothOff);
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 };
 
@@ -347,20 +348,30 @@ const smoothScrollToY = (targetY, duration = 900) => {
   anchorAnim = requestAnimationFrame(tick);
 };
 
-window.addEventListener("wheel", stopAnchorAnim, { passive: true });
-window.addEventListener("touchstart", stopAnchorAnim, { passive: true });
-window.addEventListener("mousedown", stopAnchorAnim, { passive: true });
-window.addEventListener("keydown", stopAnchorAnim);
+const onManualScroll = () => { stopAnchorAnim(); targetOff = 0; };
+window.addEventListener("wheel", onManualScroll, { passive: true });
+window.addEventListener("touchstart", onManualScroll, { passive: true });
+window.addEventListener("mousedown", onManualScroll, { passive: true });
+window.addEventListener("keydown", onManualScroll);
+
+const navigateTo = (sectionIndex) => {
+  const section = document.getElementById(`s${sectionIndex}`);
+  if (!section) return;
+  const y = Math.max(0, Math.min(section.offsetTop, maxScroll));
+  smoothScrollToY(y);
+  const halfW = canvas.width / (2 * Math.min(canvas.width, canvas.height));
+  targetOff = panDir[sectionIndex] * halfW;
+};
+
+dots.forEach((d, i) => {
+  d.style.cursor = "pointer";
+  d.addEventListener("click", () => navigateTo(i));
+});
 
 document.querySelectorAll('a[href^="#s"]').forEach((a) => {
   a.addEventListener("click", (e) => {
     e.preventDefault();
-
-    const id = a.getAttribute("href");
-    const target = document.querySelector(id);
-    if (!target) return;
-
-    const y = Math.max(0, Math.min(target.offsetTop, maxScroll));
-    smoothScrollToY(y);
+    const idx = parseInt(a.getAttribute("href").replace("#s", ""), 10);
+    navigateTo(idx);
   });
 });
