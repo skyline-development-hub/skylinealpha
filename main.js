@@ -73,6 +73,35 @@ vec3 norm(vec3 p) {
   ));
 }
 
+/* ── procedural noise ── */
+
+float hash3(vec3 p) {
+  p = fract(p * vec3(443.897, 441.423, 437.195));
+  p += dot(p, p.yzx + 19.19);
+  return fract((p.x + p.y) * p.z);
+}
+
+float noise3(vec3 p) {
+  vec3 i = floor(p), f = fract(p);
+  f = f * f * (3. - 2. * f);
+  return mix(
+    mix(mix(hash3(i), hash3(i + vec3(1,0,0)), f.x),
+        mix(hash3(i + vec3(0,1,0)), hash3(i + vec3(1,1,0)), f.x), f.y),
+    mix(mix(hash3(i + vec3(0,0,1)), hash3(i + vec3(1,0,1)), f.x),
+        mix(hash3(i + vec3(0,1,1)), hash3(i + vec3(1,1,1)), f.x), f.y),
+    f.z);
+}
+
+/* ── wireframe grid ── */
+
+float grid(vec3 p, float scale, float width) {
+  vec3 g = abs(fract(p * scale) - .5);
+  float d = min(g.x, min(g.y, g.z));
+  return 1. - smoothstep(0., width, d);
+}
+
+/* ── base palette ── */
+
 vec3 pal(float t) {
   float v = .55 + .4 * cos(TAU * .9 * t);
   return vec3(v);
@@ -98,12 +127,39 @@ void main() {
   if (hit > .5) {
     vec3 p = ro + rd * t;
     vec3 n = norm(p);
-    vec3 bc = pal(uS);
     vec3 l = normalize(vec3(.7, 1., .5));
+    float NdV = clamp(dot(-rd, n), 0., 1.);
+
+    /* base lighting */
+    vec3 bc = pal(uS);
     float dif = clamp(dot(n, l), 0., 1.);
     float spe = pow(clamp(dot(reflect(-l, n), -rd), 0., 1.), 32.);
-    float fr  = pow(1. - clamp(dot(-rd, n), 0., 1.), 3.5);
-    col = bc * (dif * .7 + .3) + spe * .5 + fr * vec3(1.) * .6;
+    float fr  = pow(1. - NdV, 3.5);
+
+    /* 1 — wireframe grid: stronger at glancing angles */
+    float gw = grid(p, 5., .06);
+    float gwFresnel = gw * (.15 + .6 * (1. - NdV));
+
+    /* 2 — animated noise bands: slow horizontal drift */
+    float bands = noise3(vec3(p.x * 3., p.y * 8. - uT * .08, p.z * 3.));
+    float bandMask = smoothstep(.35, .65, bands) * .12;
+
+    /* 3 — edge pulse: a bright ring sweeps the shape */
+    float pulse = sin(p.y * 6. - uT * .6) * .5 + .5;
+    pulse = pow(pulse, 12.) * fr * 1.2;
+
+    /* 4 — brushed micro-detail: noise in specular */
+    float micro = noise3(p * 28. + uT * .1);
+    float brushedSpe = spe * (.7 + .6 * micro);
+
+    /* compose */
+    col = bc * (dif * .65 + .3);
+    col += brushedSpe * .5;
+    col += fr * vec3(1.) * .5;
+    col += gwFresnel * vec3(1.);
+    col += bandMask;
+    col += pulse * vec3(1.);
+
     col = mix(bg, col, exp(-t * .15));
   }
 
