@@ -250,7 +250,7 @@ window.addEventListener(
 
 /* ── pagination state (independent of scroll) ── */
 
-const panDir = [0, 1, -1, 1, -1];
+const panDir = [0, -1, 1, -1, 1];
 let activePage = 0;
 let targetOff = 0;
 let smoothOff = 0;
@@ -263,7 +263,7 @@ const scrollCards = document.querySelectorAll(".scroll-card");
 const openPage = (index) => {
   if (activePage === index) { closePage(); return; }
   activePage = index;
-  const halfW = canvas.width / (2 * Math.min(canvas.width, canvas.height));
+  const halfW = canvas.width / (4 * Math.min(canvas.width, canvas.height));
   targetOff = panDir[index] * halfW;
   pages.forEach((p, i) => p.classList.toggle("active", i === index));
   scrollCardsEl.classList.add("hidden");

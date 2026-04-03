@@ -352,8 +352,7 @@ body {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
-  padding: 6rem 5rem;
+  align-items: stretch;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
@@ -367,17 +366,24 @@ body {
 /* ── text card ── */
 
 .text-card {
-  max-width: 26rem;
-  padding: 2.25rem 2rem;
+  width: 50%;
+  max-width: none;
+  padding: 6rem 4rem;
   background: var(--card-bg);
-  border-left: var(--hairline) solid var(--card-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: none;
+  border-right: var(--hairline) solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .text-card.right {
   margin-inline-start: auto;
-  border-left: none;
-  border-right: var(--hairline) solid var(--card-border);
+  border-right: none;
+  border-left: var(--hairline) solid var(--card-border);
   text-align: right;
 }
 
@@ -653,12 +659,11 @@ h2 { font-size: clamp(2.2rem, 6vw, 5rem); }
 /* ── mobile ── */
 
 @media (width <= 37.5em) {
-  .page { padding: 5rem 1.5rem; }
   #top-nav { padding: 1rem 1.25rem; }
   .nav-links { display: none; }
   #hud { bottom: 1rem; right: 1rem; }
   #scene-strip { display: none; }
-  .text-card { max-width: 100%; }
+  .text-card { width: 100%; padding: 5rem 1.5rem; }
   #theme-toggle { bottom: 1rem; left: 1.25rem; translate: 0 0; }
   #credit { display: none; }
   .case-header { flex-direction: column; gap: 0.2rem; }

@@ -73,28 +73,34 @@ All text is uppercase (`text-transform: uppercase`) except body-text paragraphs.
 | `--ui-inset` | `2rem` | Outer margin for all chrome elements |
 | `--nav-x` | `calc(--ui-inset + 0.125rem)` | Dot strip and theme toggle horizontal position |
 | `--hairline` | `0.0625rem` (1px) | All borders |
-| Page/card padding | `6rem 5rem` (desktop), `5rem 1.5rem` (mobile) | |
+| Pane padding | `6rem 4rem` (desktop), `5rem 1.5rem` (mobile) | |
 
-### Card variants
+### Split-screen page layout
 
-| Class | Alignment | Border side |
-|-------|-----------|-------------|
-| `.text-card` (default) | Left | `border-left` |
-| `.text-card.right` | Right (`margin-inline-start: auto`) | `border-right` |
+Page overlays use a **50/50 split-screen** design. The `.text-card` is a full-viewport-height frosted glass pane taking 50% of the screen width. The WebGL shape occupies the other 50%, centered in its half. The `.page` container uses `align-items: stretch` (no padding) so the pane spans edge to edge vertically.
 
-Scroll cards (`.scroll-card`) always left-aligned with `border-left`.
+| Class | Alignment | Border (dividing edge) | Shape half |
+|-------|-----------|------------------------|------------|
+| `.text-card` (default) | Left 50% | `border-right` | Right |
+| `.text-card.right` | Right 50% (`margin-inline-start: auto`) | `border-left` | Left |
+
+The pane uses `backdrop-filter: blur(12px)` for a frosted glass effect over the WebGL canvas. Content is vertically centered via `flex-direction: column; justify-content: center`.
+
+On mobile (`≤ 37.5em`), panes go `width: 100%` — no split.
+
+Scroll cards (`.scroll-card`) are a separate component — always left-aligned with `border-left`, `max-width: 22rem`.
 
 ### Pagination pan directions
 
-Pages alternate which side the shape pans to:
+Pages alternate which half the shape occupies. The shape is centered in the non-content half via `canvas.width / (4 * min(w, h))` offset. Positive `uOff` in the shader shifts the viewport left, making the shape appear on the right — so `panDir` is negative when the card is on the right (to push the shape left).
 
-| Page | panDir | Shape position | Card side |
-|------|--------|---------------|-----------|
-| 0 (Hero) | `0` | Centered | Left |
-| 1 (About) | `1` | Left edge | Right |
-| 2 (Platform) | `-1` | Right edge | Left |
-| 3 (Work) | `1` | Left edge | Right |
-| 4 (Contact) | `-1` | Right edge | Left |
+| Page | panDir | Shape half | Content pane |
+|------|--------|-----------|--------------|
+| 0 (Hero) | `0` | Centered (visible through pane) | Left |
+| 1 (About) | `-1` | Left | Right |
+| 2 (Platform) | `1` | Right | Left |
+| 3 (Work) | `-1` | Left | Right |
+| 4 (Contact) | `1` | Right | Left |
 
 ### Component inventory
 
@@ -207,7 +213,7 @@ Static deploy on Vercel. GitHub repo connected — pushes to `main` auto-deploy 
 - **Two-axis independence** — scroll and pagination must never affect each other
 - **Theme sync** — any CSS theme change must also call `updateBg()` for the WebGL uniform
 - **Shader effects are additive** — each texture layer adds to `col`, never multiplies or replaces
-- **Cards alternate sides** — odd pages right, even pages left (panDir: `[0, 1, -1, 1, -1]`)
+- **Split-screen panes** — content pane takes 50% width, shape centered in opposite half (panDir: `[0, -1, 1, -1, 1]`)
 - **Responsive breakpoint** — single breakpoint at `37.5em` (600px), hides dot strip and nav links
 - **All UI text** — DM Mono, uppercase, wide letter-spacing
 - **All display text** — Bebas Neue, tight line-height (0.92)
