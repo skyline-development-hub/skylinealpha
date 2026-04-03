@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&display=swap");
+/* Fonts loaded via next/font in layout.tsx */
 
 *,
 *::before,
@@ -28,8 +28,6 @@
   --card-bg: rgba(10, 10, 10, 0.82);
   --card-border: rgba(255, 255, 255, 0.15);
 
-  --font-display: "Bebas Neue", sans-serif;
-  --font-mono: "DM Mono", monospace;
   --hairline: 0.0625rem;
   --ui-inset: 2rem;
   --nav-x: calc(var(--ui-inset) + 0.125rem);
@@ -56,7 +54,7 @@ html {
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), monospace;
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -88,7 +86,7 @@ body {
 }
 
 .nav-wordmark {
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
   font-size: 1.4rem;
   letter-spacing: 0.06em;
   color: var(--fg);
@@ -114,6 +112,42 @@ body {
 
 .nav-link:hover {
   color: var(--accent);
+}
+
+/* ── language toggle ── */
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  pointer-events: auto;
+}
+
+.lang-btn {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.lang-btn:hover {
+  color: var(--accent);
+}
+
+.lang-btn.active {
+  color: var(--accent);
+}
+
+.lang-sep {
+  font-size: 0.5rem;
+  color: var(--muted);
 }
 
 /* ── HUD ── */
@@ -297,7 +331,7 @@ body {
 }
 
 .sc-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   letter-spacing: 0.04em;
   line-height: 0.92;
@@ -320,7 +354,7 @@ body {
   padding: 0.6rem 1.25rem;
   border: var(--hairline) solid var(--accent);
   color: var(--accent);
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), monospace;
   font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -443,7 +477,7 @@ h1, h2 {
 }
 
 h1, h2 {
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
   font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 0.92;
@@ -482,7 +516,7 @@ h2 { font-size: clamp(2.2rem, 6vw, 5rem); }
 }
 
 .stat-num {
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
   font-size: 2.2rem;
   color: var(--accent);
   line-height: 1;
@@ -621,7 +655,7 @@ h2 { font-size: clamp(2.2rem, 6vw, 5rem); }
   padding: 0.6rem 1.25rem;
   border: var(--hairline) solid var(--accent);
   color: var(--accent);
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), monospace;
   font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -649,7 +683,7 @@ h2 { font-size: clamp(2.2rem, 6vw, 5rem); }
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: right center;
   z-index: var(--z-ui);
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), monospace;
   font-size: 0.55rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;

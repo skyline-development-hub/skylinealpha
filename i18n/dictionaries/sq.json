@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Skyline DevHub — Zgjidhje Digjitale me AI",
+    "description": "Skyline DevHub është një kompani zhvillimi që ofron zgjidhje me bazë AI dhe sisteme automatizimi për bizneset në Shqipëri."
+  },
+  "nav": {
+    "about": "Rreth Nesh",
+    "approach": "Qasja",
+    "work": "Punët",
+    "contact": "Kontakti"
+  },
+  "scenes": ["ORIGJINA", "TORUS", "RRJETË", "PRIZËM", "SPIRALE"],
+  "dots": ["Kryefaqja", "Rreth Nesh", "Qasja", "Punët", "Kontakti"],
+  "themeToggle": "Ndrysho temën dritë/errësirë",
+  "scrollCards": [
+    {
+      "tag": "Skyline DevHub",
+      "title": "ZGJIDHJE\nDIGJITALE ME AI",
+      "sub": "Zhvillim me bazë AI, automatizim inteligjent dhe transformim digjital për bizneset në të gjithë Shqipërinë.",
+      "cta": "Hyni në faqe"
+    },
+    {
+      "tag": "01 — Rreth Nesh",
+      "title": "ZGJIDHJE,\nJO SOFTUER",
+      "sub": "Një kompani zhvillimi që ndërton të ardhmen digjitale të Shqipërisë. Me bazë AI. Automatizim në themel. Ofrojmë rezultate, jo lista veçorish.",
+      "cta": "Lexoni më shumë"
+    },
+    {
+      "tag": "02 — Qasja",
+      "title": "PRODUKTE\n& SHËRBIME",
+      "sub": "Produkte pronësore me bazë AI të shoqëruara me shërbime të dedikuara zhvillimi — të orientuara nga rezultati, jo nga veçoritë.",
+      "cta": "Qasja jonë"
+    },
+    {
+      "tag": "03 — Punët",
+      "title": "RASTE\nSTUDIMORE",
+      "sub": "Zgjidhjet më të mira bëhen pjesë e pandashme e punës. Shikoni çfarë kanë arritur partnerët tanë përmes transformimit digjital me bazë AI.",
+      "cta": "Shiko rastet"
+    },
+    {
+      "tag": "04 — Kontakti",
+      "title": "LE TË\nNDËRTOJMË",
+      "sub": "Pavarësisht nëse po filloni transformimin tuaj digjital apo jeni gati të automatizoni në shkallë — le të flasim.",
+      "cta": "Na kontaktoni"
+    }
+  ],
+  "pages": {
+    "hero": {
+      "tag": "Zhvillim & Zgjidhje Digjitale — Shqipëri",
+      "title": "ZGJIDHJE\nDIGJI\u00ADTALE\nME AI",
+      "body": "Skyline DevHub është një kompani zhvillimi që ndërton të ardhmen digjitale të biznesit shqiptar — me bazë AI dhe automatizim në themel që nga fillimi. Ofrojmë zgjidhje maksimalisht efikase përmes gamës sonë të produkteve dhe shërbimeve të dedikuara.",
+      "cta": "Mësoni më shumë"
+    },
+    "about": {
+      "tag": "01 — Rreth Nesh",
+      "title": "ZGJIDHJE,\nJO SOFT\u00ADUER",
+      "body1": "Skyline DevHub ekziston për ta bërë digjitalizimin e Shqipërisë inteligjent që nga fillimi. Ndërsa të tjerët shtojnë AI-në mbi proceset e vjetra, ne ndërtojmë sisteme me automatizim në themel që nga baza — duke ofruar efikasitet që shtohet vazhdimisht.",
+      "body2": "Jemi një kompani zhvillimi, jo një shitës softueri. Nuk shesim veçori apo funksionalitete — inxhinierojmë zgjidhje të plota përmes gamës sonë të produkteve dhe shërbimeve praktike, secila e projektuar për efikasitet maksimal operacional.",
+      "cta": "Qasja jonë"
+    },
+    "approach": {
+      "tag": "02 — Qasja",
+      "title": "PRODUKTE\n& SHËRBIME",
+      "body1": "Një praktikë e plotë zhvillimi — produkte pronësore të shoqëruara me shërbime të dedikuara, secila e ndërtuar me bazë AI dhe automatizim në themel.",
+      "projects": [
+        { "name": "Gama e Produkteve", "type": "Mjete Pronësore me Bazë AI" },
+        { "name": "Zhvillim i Personalizuar", "type": "Sisteme Biznesi të Përshtatura" },
+        { "name": "Integrim", "type": "Automatizim & Dizajn Rrjedhe Pune" },
+        { "name": "Konsulencë", "type": "Strategji Transformimi Digjital" }
+      ],
+      "body2": "Çdo angazhim fokusohet në rezultatin, jo në listën e veçorive. Ofrojmë atë që funksionon — asgjë më shumë, asgjë më pak.",
+      "cta": "Shiko punët tona"
+    },
+    "work": {
+      "tag": "03 — Punët",
+      "title": "RASTE\nSTUDIMORE",
+      "body": "Zgjidhjet më të mira bëhen pjesë e pandashme e punës. Ja çfarë kanë arritur partnerët tanë përmes transformimit digjital me bazë AI.",
+      "cases": [
+        {
+          "client": "Sektori Publik",
+          "tag": "Gama e Produkteve + Integrim",
+          "desc": "Digjitalizim i plotë i shërbimeve qytetare në departamente të shumta. Përpunimi i dokumenteve me AI uli kohët e trajtimit me 94%. Operacione pa letër brenda gjashtë muajsh."
+        },
+        {
+          "client": "Shërbime Financiare",
+          "tag": "Zhvillim i Personalizuar",
+          "desc": "Monitorim automatik i përputhshmërisë dhe përpunim transaksionesh. Integrim i plotë me infrastrukturën bankare kombëtare. Rishikimi manual u eliminua."
+        },
+        {
+          "client": "Logjistikë & Zinxhiri i Furnizimit",
+          "tag": "Konsulencë + Gama e Produkteve",
+          "desc": "Menaxhim flote me bazë AI dhe optimizim rrugësh në korridorin e Ballkanit Perëndimor. Kostot operacionale u ulën 31%. Saktësia e dorëzimit mbi 99.7%."
+        }
+      ],
+      "cta": "Na kontaktoni"
+    },
+    "contact": {
+      "tag": "04 — Kontakti",
+      "title": "LE TË\nNDËRTOJMË",
+      "body": "Pavarësisht nëse po filloni transformimin tuaj digjital apo jeni gati të automatizoni në shkallë — do të donim të bisedonim.",
+      "labels": ["Të Përgjithshme", "Mbështetje", "Kontakt"],
+      "statLabel": "Tiranë, Shqipëri",
+      "cta": "Kthehu në fillim"
+    }
+  },
+  "credit": "Skyline DevHub &mdash; 2026"
+}

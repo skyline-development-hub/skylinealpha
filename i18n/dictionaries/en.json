@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Skyline DevHub — AI-Native Digital Solutions",
+    "description": "Skyline DevHub is a development company delivering AI-native solutions and automation-first systems for businesses across Albania."
+  },
+  "nav": {
+    "about": "About",
+    "approach": "Approach",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "scenes": ["ORIGIN", "TORUS", "LATTICE", "PRISM", "HELIX"],
+  "dots": ["Home", "About", "Approach", "Work", "Contact"],
+  "themeToggle": "Toggle light/dark mode",
+  "scrollCards": [
+    {
+      "tag": "Skyline DevHub",
+      "title": "AI-NATIVE\nDIGITAL SOLUTIONS",
+      "sub": "AI-native development, intelligent automation, and digital transformation for businesses across Albania.",
+      "cta": "Enter site"
+    },
+    {
+      "tag": "01 — About",
+      "title": "SOLUTIONS,\nNOT SOFTWARE",
+      "sub": "A development company engineering Albania's digital future. AI-native. Automation-first. We deliver outcomes, not feature lists.",
+      "cta": "Read more"
+    },
+    {
+      "tag": "02 — Approach",
+      "title": "PRODUCTS\n& SERVICES",
+      "sub": "Proprietary AI-native products paired with dedicated development services — scoped to outcomes, not features.",
+      "cta": "Our approach"
+    },
+    {
+      "tag": "03 — Work",
+      "title": "CASE\nSTUDIES",
+      "sub": "The best solutions disappear into the workflow. See what our partners have achieved through AI-native digital transformation.",
+      "cta": "View cases"
+    },
+    {
+      "tag": "04 — Contact",
+      "title": "LET'S\nBUILD",
+      "sub": "Whether you're beginning your digital transformation or ready to automate at scale — let's talk.",
+      "cta": "Get in touch"
+    }
+  ],
+  "pages": {
+    "hero": {
+      "tag": "Development & Digital Solutions — Albania",
+      "title": "AI-NATIVE\nDIGI\u00ADTAL\nSOLUTIONS",
+      "body": "Skyline DevHub is a development company engineering the digital future of Albanian business — AI-native and automation-first from the ground up. We deliver maximally efficient solutions through our own product suite and dedicated services.",
+      "cta": "Learn more"
+    },
+    "about": {
+      "tag": "01 — About",
+      "title": "SOLUTIONS,\nNOT SOFT\u00ADWARE",
+      "body1": "Skyline DevHub exists to make the digitization of Albania intelligent from the start. While others retrofit AI onto legacy workflows, we build automation-first systems from the ground up — delivering efficiency that compounds.",
+      "body2": "We are a development company, not a software vendor. We don't sell features or functionality — we engineer complete solutions through our own product suite and hands-on services, each designed for maximum operational efficiency.",
+      "cta": "Our approach"
+    },
+    "approach": {
+      "tag": "02 — Approach",
+      "title": "PRODUCTS\n& SERVICES",
+      "body1": "A complete development practice — proprietary products paired with dedicated services, each built AI-native and automation-first.",
+      "projects": [
+        { "name": "Product Suite", "type": "Proprietary AI-Native Tools" },
+        { "name": "Custom Development", "type": "Tailored Business Systems" },
+        { "name": "Integration", "type": "Automation & Workflow Design" },
+        { "name": "Advisory", "type": "Digital Transformation Strategy" }
+      ],
+      "body2": "Each engagement is scoped to the outcome, not the feature list. We deliver what works — nothing more, nothing less.",
+      "cta": "See our work"
+    },
+    "work": {
+      "tag": "03 — Work",
+      "title": "CASE\nSTUDIES",
+      "body": "The best solutions disappear into the workflow. Here's what our partners have achieved through AI-native digital transformation.",
+      "cases": [
+        {
+          "client": "Public Sector",
+          "tag": "Product Suite + Integration",
+          "desc": "Full digitization of citizen services across multiple departments. AI-driven document processing reduced handling times by 94%. Zero-paper operations within six months."
+        },
+        {
+          "client": "Financial Services",
+          "tag": "Custom Development",
+          "desc": "Automated compliance monitoring and transaction processing. End-to-end integration with national banking infrastructure. Manual review eliminated."
+        },
+        {
+          "client": "Logistics & Supply Chain",
+          "tag": "Advisory + Product Suite",
+          "desc": "AI-native fleet management and route optimization across the Western Balkans corridor. Operational costs reduced 31%. Delivery accuracy above 99.7%."
+        }
+      ],
+      "cta": "Get in touch"
+    },
+    "contact": {
+      "tag": "04 — Contact",
+      "title": "LET'S\nBUILD",
+      "body": "Whether you're beginning your digital transformation or ready to automate at scale — we'd like to talk.",
+      "labels": ["General", "Support", "Contact"],
+      "statLabel": "Tirana, Albania",
+      "cta": "Back to start"
+    }
+  },
+  "credit": "Skyline DevHub &mdash; 2026"
+}
