@@ -63,7 +63,7 @@ function ChatPanel({
     },
   ];
 
-  const { messages, sendMessage, status } = useChat({
+  const { messages, sendMessage, status, error, clearError } = useChat({
     transport,
     messages: initialMessages,
   });
@@ -79,7 +79,8 @@ function ChatPanel({
 
   const handleSend = () => {
     const text = input.trim();
-    if (!text || status !== "ready") return;
+    if (!text || (status !== "ready" && status !== "error")) return;
+    if (status === "error") clearError();
     setInput("");
     sendMessage({ text });
   };
@@ -104,6 +105,7 @@ function ChatPanel({
   };
 
   const busy = status === "submitted" || status === "streaming";
+  const chatError = status === "error";
   const done = submitStatus === "done" || submitStatus === "error";
 
   return (
@@ -133,6 +135,9 @@ function ChatPanel({
             </span>
           </div>
         )}
+        {status === "error" && (
+          <div className="chatbot-msg bot">{dict.error}</div>
+        )}
         {submitStatus === "done" && (
           <div className="chatbot-msg bot">{dict.success}</div>
         )}
@@ -157,12 +162,12 @@ function ChatPanel({
               onChange={(e) => setInput(e.target.value)}
               placeholder={dict.placeholder}
               autoComplete="off"
-              disabled={busy}
+              disabled={busy && !chatError}
             />
             <button
               type="submit"
               className="chatbot-send"
-              disabled={busy}
+              disabled={busy && !chatError}
               aria-label="Send"
             >
               <svg

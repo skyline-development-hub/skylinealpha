@@ -1,5 +1,6 @@
 import { streamText, convertToModelMessages } from "ai";
 import { google } from "@ai-sdk/google";
+import { NextResponse } from "next/server";
 
 const SYSTEM_BUILD = `You are a friendly project intake assistant for Skyline DevHub, a development company in Tirana, Albania that builds AI-native digital solutions. A visitor wants a website built.
 
@@ -37,15 +38,29 @@ Guidelines:
 - Respond in the same language the user writes in.`;
 
 export async function POST(req: Request) {
-  const { messages, flow } = await req.json();
+  if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    return NextResponse.json(
+      { error: "GOOGLE_GENERATIVE_AI_API_KEY is not configured" },
+      { status: 500 }
+    );
+  }
 
-  const system = flow === "inquiry" ? SYSTEM_INQUIRY : SYSTEM_BUILD;
+  try {
+    const { messages, flow } = await req.json();
+    const system = flow === "inquiry" ? SYSTEM_INQUIRY : SYSTEM_BUILD;
 
-  const result = streamText({
-    model: google("gemini-2.0-flash"),
-    system,
-    messages: await convertToModelMessages(messages),
-  });
+    const result = streamText({
+      model: google("gemini-2.0-flash"),
+      system,
+      messages: await convertToModelMessages(messages),
+    });
 
-  return result.toUIMessageStreamResponse();
+    return result.toUIMessageStreamResponse();
+  } catch (err) {
+    console.error("Chat API error:", err);
+    return NextResponse.json(
+      { error: "Failed to generate response" },
+      { status: 500 }
+    );
+  }
 }
