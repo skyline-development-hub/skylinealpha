@@ -299,6 +299,16 @@ export default async function Home({
         {/* Safe: static dictionary content only */}
         <span dangerouslySetInnerHTML={{ __html: dict.credit }} />
       </div>
+
+      <footer id="legal-footer">
+        <a href={`/${locale}/legal/privacy-policy`}>{dict.footer.privacy}</a>
+        <span className="legal-sep">&middot;</span>
+        <a href={`/${locale}/legal/terms-of-service`}>{dict.footer.terms}</a>
+        <span className="legal-sep">&middot;</span>
+        <a href={`/${locale}/legal/gdpr-compliance`}>{dict.footer.gdpr}</a>
+        <span className="legal-sep">&middot;</span>
+        <a href={`/${locale}/legal/security`}>{dict.footer.security}</a>
+      </footer>
     </>
   );
 }

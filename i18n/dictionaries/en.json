@@ -103,5 +103,12 @@
       "cta": "Back to start"
     }
   },
-  "credit": "Skyline DevHub &mdash; 2026"
+  "credit": "Skyline DevHub &mdash; 2026",
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "gdpr": "GDPR Compliance",
+    "security": "Security",
+    "backToSite": "Back to site"
+  }
 }

@@ -103,5 +103,12 @@
       "cta": "Kthehu në fillim"
     }
   },
-  "credit": "Skyline DevHub &mdash; 2026"
+  "credit": "Skyline DevHub &mdash; 2026",
+  "footer": {
+    "privacy": "Politika e Privatësisë",
+    "terms": "Kushtet e Shërbimit",
+    "gdpr": "Përputhshmëria GDPR",
+    "security": "Siguria",
+    "backToSite": "Kthehu në faqe"
+  }
 }
