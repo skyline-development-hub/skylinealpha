@@ -1,4 +1,4 @@
-# SkylineAlpha
+# Skyline DevHub
 
 Mock company website for a tech infrastructure platform company. WebGL scroll-driven animation with a decoupled pagination system for content overlays.
 
@@ -219,8 +219,8 @@ npm run dev    # serves on localhost:3000 via npx serve
 
 Static deploy on Vercel. GitHub repo connected — pushes to `main` auto-deploy to production.
 
-- **Repo**: github.com/skyline-development-hub/skylinealpha
-- **Production URL**: skylinealpha.vercel.app
+- **Repo**: github.com/skyline-development-hub/skylinedevhub
+- **Production URL**: skylinedevhub.vercel.app
 
 ## Conventions
 
