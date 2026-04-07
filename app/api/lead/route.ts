@@ -1,8 +1,140 @@
 import { NextResponse } from "next/server";
+import { generateText, Output } from "ai";
+import { google } from "@ai-sdk/google";
+import { z } from "zod";
 
 interface LeadPayload {
   flow: "build" | "inquiry";
   messages: Array<{ role: string; content: string }>;
+}
+
+const briefSchema = z.object({
+  client: z.object({
+    name: z.string().nullable().describe("Person's name"),
+    business_name: z.string().nullable().describe("Business or company name"),
+    industry: z.string().nullable().describe("Industry or sector"),
+    location: z.string().nullable().describe("City, country, or region"),
+    email: z.string().nullable().describe("Email address"),
+    phone: z.string().nullable().describe("Phone number"),
+  }),
+  project: z.object({
+    site_type: z
+      .string()
+      .nullable()
+      .describe(
+        "Type of site: business, e-commerce, portfolio, web-app, landing-page, blog, etc."
+      ),
+    features: z
+      .array(z.string())
+      .describe("Requested features or functionality"),
+    design_preferences: z
+      .string()
+      .nullable()
+      .describe("Style, branding, or design direction mentioned"),
+    content_requirements: z
+      .string()
+      .nullable()
+      .describe("Content needs: copy, images, video, multilingual, etc."),
+    timeline: z
+      .string()
+      .nullable()
+      .describe("Deadline or urgency expressed"),
+    budget: z.string().nullable().describe("Budget range or constraints"),
+    additional_notes: z
+      .string()
+      .nullable()
+      .describe("Anything else relevant that doesn't fit above"),
+  }),
+  summary: z
+    .string()
+    .describe(
+      "2-3 sentence plain-English summary of what the client wants, suitable as a brief for a development team or autonomous agent"
+    ),
+});
+
+async function extractBrief(
+  flow: string,
+  transcript: string
+): Promise<z.infer<typeof briefSchema> | null> {
+  if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) return null;
+
+  try {
+    const { output } = await generateText({
+      model: google("gemini-2.5-flash"),
+      output: Output.object({ schema: briefSchema }),
+      prompt: `Extract structured information from this ${flow === "build" ? "website project intake" : "general inquiry"} conversation.\n\nReturn null for any field not mentioned or not clearly inferrable. Do not invent information.\n\n${transcript}`,
+    });
+    return output;
+  } catch (err) {
+    console.error("Brief extraction failed:", err);
+    return null;
+  }
+}
+
+function toYaml(obj: Record<string, unknown>, indent = 0): string {
+  const pad = "  ".repeat(indent);
+  const lines: string[] = [];
+
+  for (const [key, val] of Object.entries(obj)) {
+    if (val === null || val === undefined) {
+      lines.push(`${pad}${key}: null`);
+    } else if (Array.isArray(val)) {
+      if (val.length === 0) {
+        lines.push(`${pad}${key}: []`);
+      } else {
+        lines.push(`${pad}${key}:`);
+        for (const item of val) {
+          lines.push(`${pad}  - ${String(item)}`);
+        }
+      }
+    } else if (typeof val === "object") {
+      lines.push(`${pad}${key}:`);
+      lines.push(toYaml(val as Record<string, unknown>, indent + 1));
+    } else {
+      const s = String(val);
+      const needsQuote = s.includes(":") || s.includes("#") || s.includes("\n");
+      lines.push(`${pad}${key}: ${needsQuote ? JSON.stringify(s) : s}`);
+    }
+  }
+
+  return lines.join("\n");
+}
+
+function formatEmail(
+  flow: string,
+  flowLabel: string,
+  brief: z.infer<typeof briefSchema> | null,
+  transcript: string
+): string {
+  const now = new Date().toISOString();
+  const sections: string[] = [];
+
+  if (brief) {
+    const structured = { type: flowLabel, submitted: now, ...brief };
+
+    // YAML block
+    sections.push("---BEGIN YAML---");
+    sections.push(toYaml(structured));
+    sections.push("---END YAML---");
+
+    // JSON block
+    sections.push("");
+    sections.push("---BEGIN JSON---");
+    sections.push(JSON.stringify(structured, null, 2));
+    sections.push("---END JSON---");
+  } else {
+    sections.push(`Type: ${flowLabel}`);
+    sections.push(`Submitted: ${now}`);
+    sections.push("(Structured extraction unavailable)");
+  }
+
+  // Raw transcript
+  sections.push("");
+  sections.push("---BEGIN TRANSCRIPT---");
+  sections.push(transcript);
+  sections.push("---END TRANSCRIPT---");
+
+  return sections.join("\n");
 }
 
 export async function POST(req: Request) {
@@ -23,11 +155,12 @@ export async function POST(req: Request) {
   const transcript = data.messages
     .map((m) => {
       const label = m.role === "user" ? "Visitor" : "Assistant";
-      return `${label}: ${m.content}`;
+      return `[${label}] ${m.content}`;
     })
     .join("\n\n");
 
-  const body = `Flow: ${flowLabel}\n\n=== Conversation ===\n\n${transcript}`;
+  const brief = await extractBrief(data.flow, transcript);
+  const body = formatEmail(data.flow, flowLabel, brief, transcript);
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.LEAD_EMAIL || "info@skylinedevelopmenthub.com";
