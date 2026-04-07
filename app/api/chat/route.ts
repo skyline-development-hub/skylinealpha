@@ -56,11 +56,11 @@ export async function POST(req: Request) {
     ) as Parameters<typeof convertToModelMessages>[0];
 
     const result = streamText({
-      model: google("gemini-2.0-flash"),
+      model: google("gemini-2.5-flash"),
       system,
       messages: await convertToModelMessages(messages),
       onError: ({ error }) => {
-        console.error("Gemini stream error:", error);
+        console.error("Chat stream error:", error);
       },
     });
 
