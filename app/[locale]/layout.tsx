@@ -18,7 +18,28 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Skyline DevHub",
+  metadataBase: new URL("https://skylinedevelopmenthub.com"),
+  title: {
+    default: "Skyline DevHub",
+    template: "%s | Skyline DevHub",
+  },
+  description:
+    "AI-native digital solutions and automation-first systems for businesses across Albania.",
+  openGraph: {
+    siteName: "Skyline DevHub",
+    type: "website",
+    locale: "sq_AL",
+    alternateLocale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    languages: {
+      sq: "/sq",
+      en: "/en",
+    },
+  },
 };
 
 export function generateStaticParams() {
