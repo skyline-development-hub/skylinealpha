@@ -306,6 +306,35 @@ export default async function Home({
         <span dangerouslySetInnerHTML={{ __html: dict.credit }} />
       </div>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                name: "Skyline DevHub",
+                url: "https://skylinedevelopmenthub.com",
+                email: "info@skylinedevelopmenthub.com",
+                description: dict.meta.description,
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Tirana",
+                  addressCountry: "AL",
+                },
+              },
+              {
+                "@type": "WebSite",
+                name: "Skyline DevHub",
+                url: `https://skylinedevelopmenthub.com/${locale}`,
+                inLanguage: locale === "sq" ? "sq-AL" : "en-US",
+              },
+            ],
+          }),
+        }}
+      />
+
       <ChatBot dict={dict.chatbot} locale={locale} />
 
       <footer id="legal-footer">

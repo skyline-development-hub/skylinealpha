@@ -56,3 +56,20 @@ describe("Nav structure", () => {
     expect(toggle).toBeInTheDocument();
   });
 });
+
+describe("JSON-LD structured data", () => {
+  it("renders Organization and WebSite schemas", async () => {
+    await renderHome();
+    const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+    expect(scripts.length).toBeGreaterThanOrEqual(1);
+
+    const allSchemas: unknown[] = [];
+    scripts.forEach((s) => allSchemas.push(JSON.parse(s.textContent || "")));
+
+    const graph = allSchemas.find((s: any) => s["@graph"]) as any;
+    expect(graph).toBeDefined();
+    const types = graph["@graph"].map((g: any) => g["@type"]);
+    expect(types).toContain("Organization");
+    expect(types).toContain("WebSite");
+  });
+});
