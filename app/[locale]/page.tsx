@@ -4,6 +4,7 @@ import SkylineEngine from "@/components/SkylineEngine";
 import LanguageToggle from "@/components/LanguageToggle";
 import ChatBot from "@/components/ChatBot";
 import CaseCarousel from "@/components/CaseCarousel";
+import ContactForm from "@/components/ContactForm";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -284,6 +285,7 @@ export default async function Home({
                 </span>
               </div>
             </div>
+            <ContactForm dict={dict.contactForm} />
             <div className="stat-row">
               <div className="stat">
                 <span className="stat-num">TIA</span>

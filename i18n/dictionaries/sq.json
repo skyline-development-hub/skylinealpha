@@ -179,6 +179,20 @@
       "cta": "Fillo ndërtimin"
     }
   },
+  "contactForm": {
+    "service": "Interes Shërbimi",
+    "serviceOptions": ["Zhvillim i Personalizuar", "Integrim AI", "Transformim Digjital", "Tjetër"],
+    "companySize": "Madhësia e Kompanisë",
+    "sizeOptions": ["1-10", "11-50", "51-200", "200+"],
+    "budget": "Buxheti",
+    "budgetOptions": ["< €5k", "€5k - €20k", "€20k - €50k", "€50k+"],
+    "email": "Email",
+    "message": "Mesazhi",
+    "send": "Dërgo kërkesën",
+    "sending": "Duke dërguar...",
+    "sent": "U dërgua! Do t'ju kontaktojmë.",
+    "error": "Diçka shkoi keq. Provoni përsëri."
+  },
   "chatbot": {
     "buildCta": "Nd\u00ebrto faqen time",
     "inquiryCta": "B\u00ebj nj\u00eb pyetje",

@@ -179,6 +179,20 @@
       "cta": "Start building"
     }
   },
+  "contactForm": {
+    "service": "Service Interest",
+    "serviceOptions": ["Custom Development", "AI Integration", "Digital Transformation", "Other"],
+    "companySize": "Company Size",
+    "sizeOptions": ["1-10", "11-50", "51-200", "200+"],
+    "budget": "Budget Range",
+    "budgetOptions": ["< €5k", "€5k - €20k", "€20k - €50k", "€50k+"],
+    "email": "Email",
+    "message": "Message",
+    "send": "Send inquiry",
+    "sending": "Sending...",
+    "sent": "Sent! We will be in touch.",
+    "error": "Something went wrong. Please try again."
+  },
   "chatbot": {
     "buildCta": "Build my site",
     "inquiryCta": "Ask a question",

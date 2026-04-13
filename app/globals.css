@@ -1231,6 +1231,58 @@ h2 { font-size: clamp(2.2rem, 6vw, 5rem); }
   translate: -50% 0.5rem;
 }
 
+/* ── contact form ── */
+
+.contact-form {
+  margin-block-start: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-field label {
+  font-size: 0.5rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.form-field select,
+.form-field input,
+.form-field textarea {
+  background: transparent;
+  border: var(--hairline) solid var(--card-border);
+  color: var(--fg);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-field select:focus,
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-field select option {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 3rem;
+}
+
 /* ── mobile ── */
 
 @media (width <= 37.5em) {
