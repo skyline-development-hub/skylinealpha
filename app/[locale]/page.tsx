@@ -154,7 +154,6 @@ export default async function Home({
               }}
             />
             <p className="body-text">{dict.pages.hero.body}</p>
-            <p className="body-text hero-free">{dict.pages.hero.free}</p>
             <div className="cta-row">
               <button data-chatbot-build type="button" className="cta">
                 {dict.chatbot.buildCta}

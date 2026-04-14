@@ -497,16 +497,6 @@ h2 { font-size: clamp(2.2rem, 6vw, 5rem); }
   margin-block-start: 1.25rem;
 }
 
-.hero-free {
-  font-size: 0.85rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  border: var(--hairline) solid var(--card-border);
-  padding: 0.6rem 1rem;
-  margin-block-start: 1.5rem;
-  display: inline-block;
-}
 
 .h-line {
   width: 3.125rem;
