@@ -11,7 +11,6 @@ export default function LanguageToggle({ locale }: { locale: string }) {
       >
         SQ
       </Link>
-      <span className="lang-sep">/</span>
       <Link
         href="/en"
         className={`lang-btn${locale === "en" ? " active" : ""}`}

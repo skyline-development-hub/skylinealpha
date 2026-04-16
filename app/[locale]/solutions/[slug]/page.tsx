@@ -1,5 +1,7 @@
 import { getDictionary } from "@/i18n/getDictionary";
 import { locales, type Locale } from "@/i18n/config";
+import { titleHtml } from "@/lib/titleHtml";
+import { ArrowRight } from "@/components/icons/ArrowIcon";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -28,12 +30,6 @@ export async function generateMetadata({
   };
 }
 
-const ArrowIcon = () => (
-  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M1 6h10M6 1l5 5-5 5" />
-  </svg>
-);
-
 export default async function SolutionPage({
   params,
 }: {
@@ -44,9 +40,6 @@ export default async function SolutionPage({
 
   const solution = dict.solutions?.[slug as Slug];
   if (!solution) notFound();
-
-  // Safe: titleHtml only processes static dictionary content, never user input
-  const titleHtml = (text: string) => text.replace(/\n/g, "<br>");
 
   const titleMarkup = { __html: titleHtml(solution.title) };
   const schemaMarkup = {
@@ -89,7 +82,7 @@ export default async function SolutionPage({
           style={{ marginBlockStart: "2.5rem" }}
         >
           {solution.cta}
-          <ArrowIcon />
+          <ArrowRight />
         </button>
       </div>
       <script

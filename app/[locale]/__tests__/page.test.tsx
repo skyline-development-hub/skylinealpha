@@ -25,7 +25,7 @@ async function renderHome(locale = "en") {
   return render(jsx);
 }
 
-describe("Issue #1 — Hero CTA + free messaging", () => {
+describe("Hero section", () => {
   it("renders a build CTA with data-chatbot-build in the hero", async () => {
     await renderHome();
     const hero = document.querySelector('[data-page="0"]')!;
@@ -34,10 +34,10 @@ describe("Issue #1 — Hero CTA + free messaging", () => {
     expect(buildBtn).toHaveTextContent(/build my site/i);
   });
 
-  it("renders a prominent 'free' message in the hero", async () => {
+  it("renders the hero body text", async () => {
     await renderHome();
     const hero = document.querySelector('[data-page="0"]')!;
-    expect(hero.textContent).toMatch(/free/i);
+    expect(hero.textContent).toMatch(/skyline devhub/i);
   });
 });
 
@@ -63,12 +63,16 @@ describe("JSON-LD structured data", () => {
     const scripts = document.querySelectorAll('script[type="application/ld+json"]');
     expect(scripts.length).toBeGreaterThanOrEqual(1);
 
-    const allSchemas: unknown[] = [];
+    interface SchemaGraph {
+      "@graph"?: Array<{ "@type": string }>;
+    }
+
+    const allSchemas: SchemaGraph[] = [];
     scripts.forEach((s) => allSchemas.push(JSON.parse(s.textContent || "")));
 
-    const graph = allSchemas.find((s: any) => s["@graph"]) as any;
+    const graph = allSchemas.find((s) => s["@graph"]);
     expect(graph).toBeDefined();
-    const types = graph["@graph"].map((g: any) => g["@type"]);
+    const types = graph!["@graph"]!.map((g) => g["@type"]);
     expect(types).toContain("Organization");
     expect(types).toContain("WebSite");
   });

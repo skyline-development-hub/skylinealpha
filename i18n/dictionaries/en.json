@@ -7,8 +7,7 @@
     "about": "About",
     "approach": "Approach",
     "work": "Work",
-    "contact": "Contact",
-    "buildCta": "Build my site"
+    "contact": "Contact"
   },
   "scenes": ["ORIGIN", "TORUS", "LATTICE", "PRISM", "HELIX"],
   "dots": ["Home", "About", "Approach", "Work", "Contact"],

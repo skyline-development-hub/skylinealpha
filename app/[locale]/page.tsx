@@ -1,5 +1,7 @@
-import { getDictionary } from "@/i18n/getDictionary";
+import { getDictionary, type Dictionary } from "@/i18n/getDictionary";
 import { locales, type Locale } from "@/i18n/config";
+import { titleHtml } from "@/lib/titleHtml";
+import { ArrowRight } from "@/components/icons/ArrowIcon";
 import SkylineEngine from "@/components/SkylineEngine";
 import LanguageToggle from "@/components/LanguageToggle";
 import ChatBot from "@/components/ChatBot";
@@ -105,7 +107,7 @@ export default async function Home({
       </button>
 
       <div id="scene-strip">
-        {dict.dots.map((label: string, i: number) => (
+        {dict.dots.map((label, i) => (
           <div
             key={i}
             className={`scene-dot${i === 0 ? " active" : ""}`}
@@ -118,10 +120,7 @@ export default async function Home({
 
       <div id="scroll-cards" className="hidden">
         {dict.scrollCards.map(
-          (
-            card: { tag: string; title: string; sub: string; cta: string },
-            i: number
-          ) => (
+          (card, i) => (
             <div
               key={i}
               className={`scroll-card${i === 0 ? " active" : ""}`}
@@ -136,7 +135,7 @@ export default async function Home({
               <div className="sc-sub">{card.sub}</div>
               <a className="sc-cta" href={`#p${i}`}>
                 {card.cta}
-                <ArrowIcon />
+                <ArrowRight />
               </a>
             </div>
           )
@@ -157,11 +156,11 @@ export default async function Home({
             <div className="cta-row">
               <button data-chatbot-build type="button" className="cta">
                 {dict.chatbot.buildCta}
-                <ArrowIcon />
+                <ArrowRight />
               </button>
               <a className="cta" href="#p1">
                 {dict.pages.hero.cta}
-                <ArrowIcon />
+                <ArrowRight />
               </a>
             </div>
           </div>
@@ -181,7 +180,7 @@ export default async function Home({
             <p className="body-text">{dict.pages.about.body2}</p>
             <a className="cta" href="#p2">
               {dict.pages.about.cta}
-              <ArrowIcon />
+              <ArrowRight />
             </a>
           </div>
         </div>
@@ -199,7 +198,7 @@ export default async function Home({
             <p className="body-text">{dict.pages.approach.body1}</p>
             <div className="project-list">
               {dict.pages.approach.projects.map(
-                (proj: { name: string; type: string }, i: number) => (
+                (proj, i) => (
                   <div key={i} className="project-item">
                     <span className="project-name">{proj.name}</span>
                     <span className="project-type">{proj.type}</span>
@@ -207,12 +206,12 @@ export default async function Home({
                 )
               )}
             </div>
-            <p className="body-text" style={{ marginBlockStart: "1.5rem" }}>
+            <p className="body-text body-text-spaced">
               {dict.pages.approach.body2}
             </p>
             <a className="cta" href="#p3">
               {dict.pages.approach.cta}
-              <ArrowIcon />
+              <ArrowRight />
             </a>
           </div>
         </div>
@@ -287,16 +286,16 @@ export default async function Home({
             <div className="cta-row">
               <button data-chatbot-build type="button" className="cta">
                 {dict.chatbot.buildCta}
-                <ArrowIcon />
+                <ArrowRight />
               </button>
               <button data-chatbot-inquiry type="button" className="cta">
                 {dict.chatbot.inquiryCta}
-                <ArrowIcon />
+                <ArrowRight />
               </button>
             </div>
             <a className="cta" href="#p0">
               {dict.pages.contact.cta}
-              <ArrowIcon />
+              <ArrowRight />
             </a>
           </div>
         </div>

@@ -7,8 +7,7 @@
     "about": "Rreth Nesh",
     "approach": "Qasja",
     "work": "Punët",
-    "contact": "Kontakti",
-    "buildCta": "Ndërto faqen time"
+    "contact": "Kontakti"
   },
   "scenes": ["ORIGJINA", "TORUS", "RRJETË", "PRIZËM", "SPIRALE"],
   "dots": ["Kryefaqja", "Rreth Nesh", "Qasja", "Punët", "Kontakti"],

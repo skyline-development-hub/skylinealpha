@@ -214,7 +214,7 @@ void main() {
     let maxScroll = 1;
 
     const resize = () => {
-      const dpr = Math.min(devicePixelRatio ?? 1, 2);
+      const dpr = Math.min(devicePixelRatio || 1, 2);
       canvas.width = innerWidth * dpr;
       canvas.height = innerHeight * dpr;
       canvas.style.width = `${innerWidth}px`;

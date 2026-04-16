@@ -145,7 +145,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  if (!data.messages?.length || !data.flow) {
+  const validFlows: LeadPayload["flow"][] = ["build", "inquiry", "contact-form"];
+  if (!data.messages?.length || !data.flow || !validFlows.includes(data.flow)) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 

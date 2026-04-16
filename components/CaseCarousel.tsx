@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowLeft, ArrowRight } from "@/components/icons/ArrowIcon";
 
 type CaseResult = { metric: string; label: string };
 
@@ -21,18 +22,6 @@ type CaseCarouselProps = {
   counterTemplate: string;
   ctaLabel: string;
 };
-
-const ArrowLeft = () => (
-  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M11 6H1M6 1L1 6l5 5" />
-  </svg>
-);
-
-const ArrowRight = () => (
-  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M1 6h10M6 1l5 5-5 5" />
-  </svg>
-);
 
 export default function CaseCarousel({
   cases,

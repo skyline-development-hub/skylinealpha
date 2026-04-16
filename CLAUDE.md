@@ -46,6 +46,8 @@ Scroll never affects pagination. Pagination never affects scroll. Scrolling whil
 | `app/[locale]/layout.tsx` | Root layout: `next/font` loading (Bebas Neue, DM Mono), html `lang` attribute, CSS import |
 | `app/[locale]/page.tsx` | Main page: all content rendered from i18n dictionaries, `generateMetadata`, `generateStaticParams` |
 | `app/globals.css` | Full design system: tokens, layout, components, reveal animations, responsive breakpoint, legal page styles |
+| `lib/titleHtml.ts` | Shared utility: converts `\n` in dictionary strings to `<br>` for display headings |
+| `components/icons/ArrowIcon.tsx` | Shared SVG icons: `ArrowRight` and `ArrowLeft` used across pages and carousel |
 | `components/SkylineEngine.tsx` | `'use client'` — WebGL shader + compilation, scroll/velocity system, pagination state machine, HUD, theme toggle. Runs entirely in `useEffect`, renders `null` |
 | `components/LanguageToggle.tsx` | `'use client'` — SQ/EN switcher using `next/link` |
 | `components/ChatBot.tsx` | `'use client'` — AI chatbot with two flows (build project brief / general inquiry). Uses `@ai-sdk/react` `useChat` with `DefaultChatTransport`. Streams via `/api/chat`, submits leads via `/api/lead` |
@@ -55,10 +57,10 @@ Scroll never affects pagination. Pagination never affects scroll. Scrolling whil
 | `i18n/dictionaries/sq.json` | Albanian translations (default language) |
 | `i18n/dictionaries/en.json` | English translations |
 | `i18n/config.ts` | Locale list and default locale |
-| `i18n/getDictionary.ts` | Async dictionary loader with TypeScript types |
+| `i18n/getDictionary.ts` | Async dictionary loader with React `cache()` and TypeScript types |
 | `middleware.ts` | i18n routing: redirects `/` to `/{locale}` based on `Accept-Language` header |
 | `.marketing-ai/brand-manifest.json` | Brand identity manifest: colors, fonts, tone, components, pages, design system metadata |
-| `vitest.config.ts` | Test config: jsdom environment, React plugin, `@` path alias |
+| `vitest.config.ts` | Test config: jsdom environment, React plugin, `@` path alias, `.worktrees/` excluded |
 | `app/[locale]/__tests__/page.test.tsx` | Page rendering tests: hero content, chatbot CTAs, nav structure, language toggle |
 
 ### Rendering model
@@ -93,7 +95,7 @@ All translatable text is in the JSON dictionaries. To change copy:
 Dictionary structure:
 ```
 meta.title / meta.description    — page <title> and meta description
-nav.about / approach / work / contact / buildCta
+nav.about / approach / work / contact
 scenes[]                         — HUD scene names (5 entries)
 dots[]                           — dot strip hover labels (5 entries)
 themeToggle                      — aria-label for theme button
