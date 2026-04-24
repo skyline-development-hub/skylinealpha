@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "tokens:build": "tsx scripts/build-tokens.mjs",
+    "og:render": "node scripts/render-og.mjs",
+    "build": "npm run tokens:build && next build",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
@@ -13,11 +15,13 @@
   "dependencies": {
     "@ai-sdk/google": "^3.0.58",
     "@ai-sdk/react": "^3.0.147",
+    "@react-email/components": "^1.0.12",
+    "@react-email/render": "^2.0.7",
     "ai": "^6.0.145",
     "next": "^15",
-    "zod": "^3.24.0",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "zod": "^3.24.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",
@@ -27,6 +31,7 @@
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^6.0.1",
     "jsdom": "^29.0.2",
+    "tsx": "^4.21.0",
     "typescript": "^5",
     "vitest": "^4.1.4"
   }
