@@ -1,0 +1,63 @@
+/* GENERATED — do not hand-edit. Run: npm run tokens:build */
+
+:root {
+  color-scheme: dark;
+
+  /* color — dark (default) */
+  --bg: #0a0a0a;
+  --fg: #e0e0e0;
+  --muted: #666666;
+  --accent: #ffffff;
+  --card-bg: rgba(10, 10, 10, 0.82);
+  --card-border: rgba(255, 255, 255, 0.15);
+  --state-accent: oklch(78% 0.14 45);
+
+  /* type */
+  --type-display-xl: clamp(3rem, 8vw, 6.5rem);
+  --type-display-lg: clamp(2.2rem, 6vw, 5rem);
+  --type-display-md: clamp(1.4rem, 2.5vw, 2rem);
+  --type-tag: 0.6rem;
+  --type-ui: 0.62rem;
+  --type-body: 0.78rem;
+  --type-micro: 0.55rem;
+
+  --tracking-display: 0.03em;
+  --tracking-tag: 0.25em;
+  --tracking-ui: 0.18em;
+  --tracking-body: 0.04em;
+  --tracking-wide: 0.15em;
+
+  /* space */
+  --hair: 0.0625rem;
+  --ui-inset: 2rem;
+  --pane-pad-x: 4rem;
+  --pane-pad-y: 6rem;
+
+  /* motion */
+  --ease-skyline: cubic-bezier(.2, .7, .1, 1);
+  --reveal-duration: 0.5s;
+  --stagger-1: 0s;
+  --stagger-2: 0.06s;
+  --stagger-3: 0.14s;
+  --stagger-4: 0.22s;
+  --stagger-5: 0.26s;
+  --stagger-6: 0.32s;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f0f0f0;
+  --fg: #0d0d0d;
+  --muted: #999999;
+  --accent: #1a1a1a;
+  --card-bg: rgba(240, 240, 240, 0.88);
+  --card-border: rgba(26, 26, 26, 0.18);
+}
+
+@media (width <= 37.5em) {
+  :root {
+    --pane-pad-x: 1.5rem;
+    --pane-pad-y: 5rem;
+    --ui-inset: 1.25rem;
+  }
+}
