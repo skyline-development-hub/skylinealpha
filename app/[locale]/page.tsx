@@ -20,9 +20,31 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
+  // Pages are anchors on a single route, not separate routes, so all five
+  // scene OGs ride along. origin (hero) is primary; the rest are alternates
+  // that crawlers supporting multi-image OG can pick from.
+  const og = (file: string, alt: string) => ({
+    url: `/og/${file}`,
+    width: 2400,
+    height: 1260,
+    alt,
+  });
   return {
     title: dict.meta.title,
     description: dict.meta.description,
+    openGraph: {
+      images: [
+        og("origin.png",  "Skyline DevHub — Origin"),
+        og("torus.png",   "Skyline DevHub — About"),
+        og("lattice.png", "Skyline DevHub — Approach"),
+        og("prism.png",   "Skyline DevHub — Work"),
+        og("helix.png",   "Skyline DevHub — Contact"),
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["/og/origin.png"],
+    },
   };
 }
 
