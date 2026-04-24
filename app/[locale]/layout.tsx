@@ -1,7 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, DM_Mono } from "next/font/google";
 import { locales } from "@/i18n/config";
 import "../globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  // Extend layout under the iPhone notch/dynamic island; we honour
+  // `env(safe-area-inset-*)` for chrome elements.
+  viewportFit: "cover",
+  // Explicit dark for initial paint; theme switching lives in JS.
+  themeColor: "#0a0a0a",
+};
 
 const bebasNeue = Bebas_Neue({
   weight: "400",

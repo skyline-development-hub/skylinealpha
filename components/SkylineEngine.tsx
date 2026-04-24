@@ -243,6 +243,10 @@ void main() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
 
+    // Hoisted so the wheel/touchstart registration below can gate on it.
+    // Recomputed on each call so orientation changes work without re-mount.
+    const isMobile = () => window.matchMedia("(max-width: 37.5em)").matches;
+
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
       const linePx = 16;
@@ -257,7 +261,14 @@ void main() {
       velocity = Math.max(-600, Math.min(600, velocity));
       closePage();
     };
-    window.addEventListener("wheel", onWheel, { passive: false });
+    // Desktop only. Mobile doesn't emit wheel events from touch scrolling,
+    // and a passive:false wheel listener on the window (even if it never
+    // fires from touch) has caused iOS Safari in some versions to route
+    // around its "fast click" path, intermittently swallowing tap events
+    // that DevTools mobile emulation dispatches fine.
+    if (!isMobile()) {
+      window.addEventListener("wheel", onWheel, { passive: false });
+    }
 
     /* ── pagination state ── */
 
@@ -306,7 +317,7 @@ void main() {
     //   - scroll-card[0]'s "Learn more" → progress forward to about (#p1)
     //   - contact page's "Back to start" / wordmark → reset to top so
     //     scroll-card[0] becomes active naturally
-    const isMobile = () => window.matchMedia("(max-width: 37.5em)").matches;
+    // (isMobile is defined earlier, above the wheel listener registration.)
     const goToStart = () => {
       closePage();
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -346,17 +357,21 @@ void main() {
     };
     wordmark?.addEventListener("click", wordmarkHandler);
 
-    // Desktop: any scroll input (wheel + touch-drag) closes an open page
-    // so the scroll-scene narrative resumes. Mobile doesn't use this — text
-    // cards scroll internally (overflow-y: auto), and a window-level
-    // touchstart closing the page on every tap broke (a) the text-card's
-    // own scroll, and (b) CTA navigation (touchstart fires before click,
-    // closing the page before the destination opens).
-    const onTouchStart = () => {
-      if (isMobile()) return;
-      closePage();
-    };
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    // Desktop-only: any scroll input (wheel + touch-drag on a touchscreen
+    // laptop) closes an open page so the scroll-scene narrative resumes.
+    // Not registered on mobile at all:
+    //   - text cards scroll internally now (overflow-y: auto), so a
+    //     window-level touchstart-closes-page broke internal scroll
+    //   - touchstart fires before click; even with passive:true the
+    //     presence of the listener interacts with iOS Safari's click
+    //     pipeline and can intermittently suppress tap-to-click on real
+    //     devices (while DevTools emulation fires clicks fine)
+    //   - CTA routing already handles "close a page" cases (wordmark,
+    //     "Back to start", navigating to another page)
+    const onTouchStart = () => closePage();
+    if (!isMobile()) {
+      window.addEventListener("touchstart", onTouchStart, { passive: true });
+    }
 
     /* ── HUD ── */
 

@@ -27,6 +27,13 @@ body {
   font-family: var(--font-mono), monospace;
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
+  /* Tells iOS Safari this page is tap-oriented: dispatch click events
+     without the double-tap-zoom observation window and treat touch as
+     a pan/zoom gesture only where explicitly allowed. Without this,
+     iOS on real devices can swallow click events intermittently even
+     when DevTools mobile emulation fires them. */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ── canvas ── */
@@ -34,8 +41,8 @@ body {
 #webgl-canvas {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   pointer-events: none;
 }
@@ -806,7 +813,10 @@ h2 { font-size: clamp(2.2rem, 6vw, 5rem); }
   max-width: 48rem;
   margin: 0 auto;
   padding: 4rem 2rem 6rem;
+  /* 100dvh is the dynamic viewport (address-bar-aware) on iOS 15.4+.
+     100vh layered first as fallback for older browsers. */
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .legal-nav {
@@ -957,6 +967,7 @@ h2 { font-size: clamp(2.2rem, 6vw, 5rem); }
   max-width: calc(100vw - 2rem);
   height: 28rem;
   max-height: calc(100vh - 8rem);
+  max-height: calc(100dvh - 8rem);
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
