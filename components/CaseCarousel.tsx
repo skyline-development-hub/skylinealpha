@@ -8,6 +8,7 @@ type CaseResult = { metric: string; label: string };
 type CaseStudy = {
   client: string;
   tag: string;
+  preview?: string;
   desc: string;
   challenge: string;
   solution: string;
@@ -57,6 +58,26 @@ export default function CaseCarousel({
       </div>
 
       <div className="case-slide" key={index}>
+        {c.preview && (
+          c.link ? (
+            <a
+              href={c.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="case-preview"
+              aria-label={`Open ${c.client}`}
+            >
+              <img src={c.preview} alt="" loading="lazy" />
+              <span className="case-preview-badge">{c.client} ↗</span>
+            </a>
+          ) : (
+            <div className="case-preview">
+              <img src={c.preview} alt="" loading="lazy" />
+              <span className="case-preview-badge">{c.client}</span>
+            </div>
+          )
+        )}
+
         <div className="case-slide-header">
           <span className="case-client">{c.client}</span>
           <span className="case-tag">{c.tag}</span>
