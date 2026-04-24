@@ -1,0 +1,557 @@
+{
+  "_meta": { "locale": "sq", "todo": "TODO-sq: legal copy not yet translated. This file is a byte-for-byte copy of en.json and ships the English content as a placeholder. A follow-up content PR will replace these strings with Albanian translations." },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "updated": "Last Updated: November 3, 2025",
+    "sections": [
+      {
+        "heading": "1. Introduction",
+        "blocks": [
+          { "type": "p", "text": "Skyline DevHub (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website skylinedevhub.com and use our services." },
+          { "type": "p", "text": "By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy. If you do not agree with our policies and practices, please do not use our services." }
+        ]
+      },
+      {
+        "heading": "2. Information We Collect",
+        "blocks": [
+          { "type": "h3", "text": "Personal Information" },
+          { "type": "p", "text": "We collect information that you provide directly to us, including:" },
+          { "type": "ul", "items": [
+            "Communications and correspondence with us",
+            "Payment and billing information",
+            "Employment and professional information",
+            "Account credentials and preferences",
+            "Any other information you choose to provide"
+          ] },
+          { "type": "h3", "text": "Automatically Collected Information" },
+          { "type": "p", "text": "When you access our services, we automatically collect:" },
+          { "type": "ul", "items": [
+            "Log files and analytics data",
+            "Cookies and similar tracking technologies",
+            "Device information and identifiers",
+            "Usage data and browsing patterns",
+            "Location data (with consent)"
+          ] },
+          { "type": "h3", "text": "Business Data" },
+          { "type": "p", "text": "For enterprise clients, we process business data including verification records, audit logs, compliance reports, and system performance metrics. This data is processed strictly in accordance with our Data Processing Agreement and applicable data protection regulations." }
+        ]
+      },
+      {
+        "heading": "3. How We Use Your Information",
+        "blocks": [
+          { "type": "p", "text": "We use the information we collect for the following purposes:" },
+          { "type": "ul", "items": [
+            "Marketing and promotional purposes (with your consent)",
+            "Process transactions and manage your account",
+            "Improve and optimize our services",
+            "Communicate with you about your account or our services",
+            "Ensure security and prevent fraud",
+            "Comply with legal obligations",
+            "Provide customer support",
+            "Conduct research and analytics"
+          ] }
+        ]
+      },
+      {
+        "heading": "4. Information Sharing and Disclosure",
+        "blocks": [
+          { "type": "p", "text": "We do not sell your personal information. We may share your information in the following circumstances:" },
+          { "type": "h3", "text": "Service Providers" },
+          { "type": "p", "text": "We engage trusted third-party service providers to perform functions on our behalf, including cloud hosting (Vercel, Supabase), payment processing (Stripe), analytics (Google Analytics), and customer support tools. These providers have access to your information only to perform specific tasks and are obligated to protect your data." },
+          { "type": "h3", "text": "Business Transfers" },
+          { "type": "p", "text": "In the event of a merger, acquisition, reorganization, or sale of assets, your information may be transferred as part of that transaction. We will notify you via email and/or prominent notice on our website of any change in ownership or use of your personal information." },
+          { "type": "h3", "text": "Legal Requirements" },
+          { "type": "p", "text": "We may disclose your information if required by law, court order, or governmental regulation, or if we believe disclosure is necessary to protect our rights, your safety, or the safety of others, investigate fraud, or respond to government requests." }
+        ]
+      },
+      {
+        "heading": "5. Data Security",
+        "blocks": [
+          { "type": "p", "text": "We implement industry-standard security measures to protect your personal information:" },
+          { "type": "ul", "items": [
+            "Secure development lifecycle practices",
+            "Regular security assessments and penetration testing",
+            "Employee security awareness training",
+            "Access controls and authentication measures",
+            "Network and application firewalls",
+            "Intrusion detection and prevention systems",
+            "Regular backup and disaster recovery procedures",
+            "Incident response and breach notification procedures"
+          ] },
+          { "type": "p", "text": "However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee its absolute security." }
+        ]
+      },
+      {
+        "heading": "6. Data Retention",
+        "blocks": [
+          { "type": "p", "text": "We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When determining retention periods, we consider:" },
+          { "type": "ul", "items": [
+            "Legal, regulatory, tax, accounting, or reporting requirements",
+            "Fulfillment of contractual obligations",
+            "Legitimate business purposes",
+            "As required by applicable laws and regulations"
+          ] },
+          { "type": "p", "text": "After the retention period expires, we will securely delete or anonymize your personal information in accordance with applicable laws and our data retention policy." }
+        ]
+      },
+      {
+        "heading": "7. Your Privacy Rights",
+        "blocks": [
+          { "type": "p", "text": "Depending on your location, you may have the following rights regarding your personal information:" },
+          { "type": "ul", "items": [
+            { "label": "Access", "text": "Request a copy of your personal data" },
+            { "label": "Correction", "text": "Correct inaccurate or incomplete data" },
+            { "label": "Deletion", "text": "Request deletion of your personal data" },
+            { "label": "Portability", "text": "Receive your data in a structured, machine-readable format" },
+            { "label": "Objection", "text": "Object to processing based on legitimate interests" },
+            { "label": "Restriction", "text": "Request restriction of processing in certain circumstances" },
+            { "label": "Withdrawal", "text": "Withdraw consent at any time (where processing is based on consent)" }
+          ] },
+          { "type": "p", "text": "To exercise these rights, please contact us at privacy@skylinedevhub.com. We will respond to your request within 30 days." }
+        ]
+      },
+      {
+        "heading": "8. International Data Transfers",
+        "blocks": [
+          { "type": "p", "text": "Your information may be transferred to and processed in countries other than your country of residence. When we transfer your information internationally, we implement appropriate safeguards, including:" },
+          { "type": "ul", "items": [
+            "Adequacy decisions by relevant data protection authorities",
+            "Standard Contractual Clauses approved by relevant authorities",
+            "Binding Corporate Rules for intra-group transfers",
+            "Your explicit consent when required"
+          ] }
+        ]
+      },
+      {
+        "heading": "9. Cookies and Tracking Technologies",
+        "blocks": [
+          { "type": "p", "text": "We use cookies and similar tracking technologies to collect and store information. We use the following types of cookies:" },
+          { "type": "ul", "items": [
+            { "label": "Essential Cookies", "text": "Required for basic site functionality and security" },
+            { "label": "Performance Cookies", "text": "Help us understand how visitors interact with our website" },
+            { "label": "Functional Cookies", "text": "Remember your preferences and settings" },
+            { "label": "Marketing Cookies", "text": "Track advertising effectiveness (with consent)" }
+          ] },
+          { "type": "p", "text": "You can control cookies through your browser settings. However, disabling cookies may affect website functionality." }
+        ]
+      },
+      {
+        "heading": "10. Children's Privacy",
+        "blocks": [
+          { "type": "p", "text": "Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected personal information from a child without parental consent, we will take steps to delete that information promptly." }
+        ]
+      },
+      {
+        "heading": "11. Changes to This Privacy Policy",
+        "blocks": [
+          { "type": "p", "text": "We may update this Privacy Policy from time to time. We will notify you of any material changes by displaying a prominent notice on our website, sending you a notification email, or updating the \"Last Updated\" date on this page. Your continued use of our services after any changes indicates your acceptance of the updated Privacy Policy." }
+        ]
+      },
+      {
+        "heading": "12. Contact Us",
+        "blocks": [
+          { "type": "p", "text": "If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:" },
+          { "type": "p", "text": "Skyline DevHub", "strong": true },
+          { "type": "p", "text": "Privacy Officer: Skyline DevHub Legal Team" },
+          { "type": "p", "text": "Email: privacy@skylinedevhub.com" },
+          { "type": "p", "text": "Address: Tirana, Albania" },
+          { "type": "p", "text": "Data Protection Officer: dpo@skylinedevhub.com" },
+          { "type": "p", "text": "For GDPR-related inquiries, you also have the right to lodge a complaint with your local supervisory authority." }
+        ]
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "Terms of Service",
+    "updated": "Last Updated: November 3, 2025",
+    "sections": [
+      {
+        "heading": "1. Agreement to Terms",
+        "blocks": [
+          { "type": "p", "text": "These Terms of Service (\"Terms\") constitute a legally binding agreement between you and Skyline DevHub (\"Company,\" \"we,\" \"our,\" or \"us\") governing your access to and use of our website skylinedevhub.com and all related services, products, and platforms." },
+          { "type": "p", "text": "By accessing or using our services, you acknowledge that you are at least 18 years of age, are legally capable of entering into binding contracts, and agree to comply with these Terms. These Terms are binding upon you from the moment you access or use any of our services." }
+        ]
+      },
+      {
+        "heading": "2. Definitions",
+        "blocks": [
+          { "type": "ul", "items": [
+            { "label": "Services", "text": "All products, platforms, and services offered by Skyline DevHub, including consulting, development, and API access" },
+            { "label": "User Account", "text": "A registered account providing personalized access to our services" },
+            { "label": "Content", "text": "All materials uploaded, downloaded, or otherwise accessed through our services" },
+            { "label": "Enterprise Client", "text": "A business entity with a separate enterprise agreement" },
+            { "label": "Intellectual Property", "text": "Patents, trademarks, copyrights, trade secrets, and other proprietary rights" }
+          ] }
+        ]
+      },
+      {
+        "heading": "3. Eligibility and Account Registration",
+        "blocks": [
+          { "type": "p", "text": "To use our services, you must:" },
+          { "type": "ul", "items": [
+            "Be at least 18 years of age",
+            "Be responsible for all activities under your account",
+            "Maintain the security of your password and credentials",
+            "Notify us immediately of any unauthorized use",
+            "Provide accurate and complete information",
+            "Not share your credentials with others"
+          ] }
+        ]
+      },
+      {
+        "heading": "4. Acceptable Use Policy",
+        "blocks": [
+          { "type": "p", "text": "You agree not to engage in any of the following prohibited activities:" },
+          { "type": "ul", "items": [
+            "Using services to compete or develop similar products",
+            "Violating applicable laws or regulations",
+            "Uploading malicious code or viruses",
+            "Attempting unauthorized system access",
+            "Disrupting or interfering with service operations",
+            "Harvesting user information without consent",
+            "Impersonating any person or entity",
+            "Automated data collection without authorization",
+            "Bypassing security measures",
+            "Using services for fraudulent or deceptive purposes",
+            "Reverse engineering or decompiling any part of the services"
+          ] }
+        ]
+      },
+      {
+        "heading": "5. Intellectual Property Rights",
+        "blocks": [
+          { "type": "p", "text": "The Company owns all content, features, and functionality of our services. You are granted a limited, non-exclusive, non-transferable license to use our services for their intended purpose. No resale or creation of derivative works is permitted." },
+          { "type": "p", "text": "You retain ownership of content you submit but grant us a license to use it in connection with providing our services. All Skyline DevHub trademarks are protected and may not be used without written consent." }
+        ]
+      },
+      {
+        "heading": "6. Payment Terms and Billing",
+        "blocks": [
+          { "type": "ul", "items": [
+            "Fees are non-refundable except where required by law",
+            "Enterprise pricing is available via custom agreements",
+            "Monthly/recurring billing requires valid payment authorization",
+            "You are responsible for maintaining accurate billing information",
+            "Late payments incur interest at 1.5% monthly (or legal maximum)",
+            "Prices are exclusive of VAT, GST, and sales taxes (your responsibility)"
+          ] }
+        ]
+      },
+      {
+        "heading": "7. Service Availability and Support",
+        "blocks": [
+          { "type": "p", "text": "We target 99.9% service uptime but do not guarantee uninterrupted availability. Scheduled maintenance may temporarily affect service access, with advance notice when possible." },
+          { "type": "p", "text": "Support tiers vary by service plan. Enterprise clients receive dedicated support channels. Standard support is available via email during business hours (CET)." }
+        ]
+      },
+      {
+        "heading": "8. Warranties and Disclaimers",
+        "blocks": [
+          { "type": "p", "text": "We provide a limited warranty that services will perform substantially in accordance with documentation for 90 days from initial access. Beyond this, services are provided \"AS IS\" and \"AS AVAILABLE\" without warranties of any kind, whether express or implied. We make no warranties regarding results, accuracy, non-infringement, or uninterrupted service." }
+        ]
+      },
+      {
+        "heading": "9. Limitation of Liability",
+        "blocks": [
+          { "type": "p", "text": "Our total liability is capped at the amount you paid us in the preceding 12 months. We are not liable for any indirect, incidental, special, consequential, or punitive damages, regardless of the legal theory (contract, tort, negligence, or strict liability). Jurisdiction-dependent exceptions may apply for certain warranties." }
+        ]
+      },
+      {
+        "heading": "10. Indemnification",
+        "blocks": [
+          { "type": "p", "text": "You agree to indemnify the Company against claims arising from breach of these Terms, violation of applicable laws, unauthorized service use, content you submit, or infringement of third-party rights." }
+        ]
+      },
+      {
+        "heading": "11. Data Protection and Privacy",
+        "blocks": [
+          { "type": "p", "text": "Your use of our services is also governed by our Privacy Policy, which is incorporated by reference into these Terms. Enterprise clients may request a separate GDPR-compliant Data Processing Agreement." }
+        ]
+      },
+      {
+        "heading": "12. Termination",
+        "blocks": [
+          { "type": "p", "text": "You may terminate your account at any time via account closure or by contacting us. We may immediately suspend or terminate your access without notice for violations, fraud, or harmful conduct." },
+          { "type": "p", "text": "Upon termination, your right to use the services ceases immediately. User content will be deleted within 30 days, except where retention is required by law. Intellectual property rights, disclaimers, liability limitations, and dispute resolution provisions survive termination." }
+        ]
+      },
+      {
+        "heading": "13. Governing Law and Dispute Resolution",
+        "blocks": [
+          { "type": "p", "text": "These Terms are governed by the laws of the Republic of Albania. EU users retain mandatory consumer protection rights under their local laws." },
+          { "type": "p", "text": "Disputes are resolved through the following process:" },
+          { "type": "ul", "items": [
+            "Informal negotiation between parties",
+            "Mediation via an independent third-party mediator",
+            "Binding arbitration (if agreed upon by both parties)",
+            "Jurisdiction of Albanian courts as a final resort"
+          ] },
+          { "type": "p", "text": "All disputes must be resolved individually (class action waiver)." }
+        ]
+      },
+      {
+        "heading": "14. Miscellaneous",
+        "blocks": [
+          { "type": "ul", "items": [
+            { "label": "Entire Agreement", "text": "These Terms, together with the Privacy Policy, constitute the entire agreement between you and Skyline DevHub" },
+            { "label": "Amendments", "text": "We may modify these Terms with notice; continued use constitutes acceptance" },
+            { "label": "Severability", "text": "If any provision is found invalid, the remaining provisions remain in effect" },
+            { "label": "Assignment", "text": "You may not assign these Terms; the Company may assign freely" },
+            { "label": "Waiver", "text": "Non-enforcement of any right does not constitute a waiver" },
+            { "label": "Force Majeure", "text": "The Company is not liable for failures due to unforeseeable circumstances beyond our control" }
+          ] }
+        ]
+      },
+      {
+        "heading": "15. Contact Us",
+        "blocks": [
+          { "type": "p", "text": "Skyline DevHub", "strong": true },
+          { "type": "p", "text": "Legal Team" },
+          { "type": "p", "text": "Email: legal@skylinedevhub.com" },
+          { "type": "p", "text": "Address: Tirana, Albania" }
+        ]
+      }
+    ]
+  },
+  "gdprCompliance": {
+    "title": "GDPR Compliance",
+    "updated": "Last Updated: November 3, 2025",
+    "sections": [
+      {
+        "heading": "1. Our Commitment to GDPR",
+        "blocks": [
+          { "type": "p", "text": "Skyline DevHub is fully committed to compliance with the European Union General Data Protection Regulation (GDPR). We implement comprehensive policies, technical controls, and organizational measures to protect personal data using a defense-in-depth approach." }
+        ]
+      },
+      {
+        "heading": "2. Legal Basis for Data Processing",
+        "blocks": [
+          { "type": "p", "text": "Under GDPR Article 6, we process personal data only with a valid legal basis:" },
+          { "type": "h3", "text": "Contractual Necessity" },
+          { "type": "p", "text": "Account creation, service delivery, payment processing, and customer support." },
+          { "type": "h3", "text": "Legitimate Interests" },
+          { "type": "p", "text": "Fraud prevention, security monitoring, service improvement, and marketing communications (with opt-out)." },
+          { "type": "h3", "text": "Legal Obligation" },
+          { "type": "p", "text": "Tax reporting, responses to authority requests, and legally mandated record keeping." },
+          { "type": "h3", "text": "Consent" },
+          { "type": "p", "text": "Marketing communications, cookies, and optional data collection. Consent may be withdrawn at any time." }
+        ]
+      },
+      {
+        "heading": "3. Your Rights Under GDPR",
+        "blocks": [
+          { "type": "h3", "text": "Right to Access (Article 15)" },
+          { "type": "p", "text": "You may obtain confirmation of whether we process your data and request access to it. Contact privacy@skylinedevhub.com; we will respond within 30 days." },
+          { "type": "h3", "text": "Right to Rectification (Article 16)" },
+          { "type": "p", "text": "You may correct inaccurate or incomplete personal data. Update your account settings directly or contact us for corrections, which take effect immediately." },
+          { "type": "h3", "text": "Right to Erasure (Article 17)" },
+          { "type": "p", "text": "You may request deletion of your personal data when: the data is no longer necessary, consent is withdrawn, an objection is valid, processing was unlawful, or a legal obligation requires it. Deletion requests are processed within 30 days, with exceptions for legal retention requirements." },
+          { "type": "h3", "text": "Right to Restriction (Article 18)" },
+          { "type": "p", "text": "You may restrict processing in certain situations. Contact our Data Protection Officer; your data will be marked and processing limited accordingly." },
+          { "type": "h3", "text": "Right to Data Portability (Article 20)" },
+          { "type": "p", "text": "You may receive your personal data in a structured, machine-readable format (JSON). Request via your dashboard or email; delivered within 30 days." },
+          { "type": "h3", "text": "Right to Object (Article 21)" },
+          { "type": "p", "text": "You may object to processing based on legitimate interests or for marketing purposes. Use unsubscribe links or contact us directly." },
+          { "type": "h3", "text": "Right to Withdraw Consent (Article 7(3))" },
+          { "type": "p", "text": "You may withdraw consent at any time via your account settings or by contacting us directly." },
+          { "type": "h3", "text": "Right to Lodge a Complaint (Article 77)" },
+          { "type": "p", "text": "You have the right to lodge a complaint with a supervisory authority. For EU-wide information, visit edpb.europa.eu." }
+        ]
+      },
+      {
+        "heading": "4. Data Protection Principles (Article 5)",
+        "blocks": [
+          { "type": "ul", "items": [
+            { "label": "Lawfulness, Fairness & Transparency", "text": "Valid legal basis, fair processing, clear communication" },
+            { "label": "Purpose Limitation", "text": "Specified, explicit, and legitimate purposes only" },
+            { "label": "Data Minimization", "text": "Only adequate, relevant, and necessary data collected" },
+            { "label": "Accuracy", "text": "Data maintained accurately and kept up to date; errors corrected promptly" },
+            { "label": "Storage Limitation", "text": "Retained only as long as necessary, then deleted or anonymized" },
+            { "label": "Integrity & Confidentiality", "text": "Appropriate technical and organizational security measures applied" }
+          ] }
+        ]
+      },
+      {
+        "heading": "5. Data Processing & Security Measures",
+        "blocks": [
+          { "type": "h3", "text": "Technical Measures" },
+          { "type": "ul", "items": [
+            "AES-256 encryption at rest",
+            "TLS 1.3 encryption in transit",
+            "Pseudonymization and anonymization where appropriate",
+            "Role-based access controls",
+            "Multi-factor authentication",
+            "Automated vulnerability scanning",
+            "Secure development lifecycle",
+            "Regular penetration testing and audits"
+          ] },
+          { "type": "h3", "text": "Organizational Measures" },
+          { "type": "ul", "items": [
+            "Dedicated Data Protection Officer (DPO)",
+            "Regular staff training on data protection",
+            "Data Protection Impact Assessments (DPIAs)",
+            "Documented information security policies",
+            "Vendor due diligence and processor agreements",
+            "Incident response and breach notification procedures",
+            "Regular compliance audits",
+            "Privacy by Design and Privacy by Default"
+          ] }
+        ]
+      },
+      {
+        "heading": "6. International Data Transfers",
+        "blocks": [
+          { "type": "p", "text": "For EU customers, data is stored exclusively in EU data centers. All cross-border data transfers employ appropriate safeguards:" },
+          { "type": "ul", "items": [
+            "Standard Contractual Clauses (SCCs) approved by the EU for third-country transfers",
+            "Binding Corporate Rules for intra-group transfers",
+            "Supplementary technical controls as additional measures",
+            "Adequacy decisions for jurisdictions with adequate protection levels"
+          ] },
+          { "type": "p", "text": "Transfer Impact Assessments are conducted to evaluate risks per Schrems II guidance." }
+        ]
+      },
+      {
+        "heading": "7. Data Processing Agreement",
+        "blocks": [
+          { "type": "p", "text": "We provide Data Processing Agreements covering all data processing activities performed on behalf of clients, including transparent sub-processor lists with advance notification before adding new sub-processors. To request a DPA, contact legal@skylinedevhub.com; typical processing time is 5 business days." }
+        ]
+      },
+      {
+        "heading": "8. Data Breach Notification",
+        "blocks": [
+          { "type": "ul", "items": [
+            { "label": "Detection & Response", "text": "Continuous monitoring with immediate action upon detection" },
+            { "label": "Authority Notification", "text": "Within 72 hours as required by GDPR" },
+            { "label": "Individual Notification", "text": "Affected individuals notified promptly" },
+            { "label": "Documentation", "text": "Full documentation of breach scope, impact, and remediation steps" }
+          ] }
+        ]
+      },
+      {
+        "heading": "9. Contact",
+        "blocks": [
+          { "type": "p", "text": "Data Protection Officer", "strong": true },
+          { "type": "p", "text": "Email: dpo@skylinedevhub.com" },
+          { "type": "p", "text": "Address: Tirana, Albania" },
+          { "type": "p", "text": "Response time: within 30 days" },
+          { "type": "p", "text": "Privacy & Data Requests", "strong": true },
+          { "type": "p", "text": "Email: privacy@skylinedevhub.com" }
+        ]
+      }
+    ]
+  },
+  "security": {
+    "title": "Security",
+    "updated": "Enterprise-grade security protecting your data, systems, and trust",
+    "sections": [
+      {
+        "heading": "1. Our Security Commitment",
+        "blocks": [
+          { "type": "p", "text": "At Skyline DevHub, security is foundational to everything we build. We employ industry-standard security protocols, continuous monitoring, and proactive threat detection to safeguard your data and operations." },
+          { "type": "p", "text": "Our security program is built on the principle of defense in depth, implementing multiple layers of security controls across our infrastructure, applications, and operations." }
+        ]
+      },
+      {
+        "heading": "2. Infrastructure Security",
+        "blocks": [
+          { "type": "h3", "text": "Cloud Infrastructure" },
+          { "type": "p", "text": "Our infrastructure is hosted on industry-leading cloud providers with multi-region redundancy. All data centers are SOC 2 Type II certified and ISO 27001 compliant. We leverage edge computing for optimal performance and security isolation." },
+          { "type": "h3", "text": "Network Security" },
+          { "type": "p", "text": "Advanced DDoS protection with rate limiting, bot detection, and Web Application Firewall (WAF) rules. All traffic is encrypted using TLS 1.3 with perfect forward secrecy. Network segmentation isolates critical systems from public-facing applications." },
+          { "type": "h3", "text": "Container Security" },
+          { "type": "p", "text": "All services run in isolated containers with minimal attack surface. Container images are scanned for vulnerabilities before deployment. Security policies enforce pod security standards and restrict privileged operations." }
+        ]
+      },
+      {
+        "heading": "3. Data Security & Encryption",
+        "blocks": [
+          { "type": "h3", "text": "Encryption at Rest" },
+          { "type": "p", "text": "All data is encrypted at rest using AES-256 encryption with hardware security modules (HSM) for key management. Database backups are encrypted and stored in geographically distributed locations." },
+          { "type": "h3", "text": "Encryption in Transit" },
+          { "type": "p", "text": "All data transmission uses TLS 1.3 or higher with strong cipher suites. Certificate pinning prevents man-in-the-middle attacks. API communications employ mutual TLS (mTLS) for service-to-service authentication." },
+          { "type": "h3", "text": "Data Residency" },
+          { "type": "p", "text": "For EU customers, data is stored exclusively in EU data centers, ensuring GDPR compliance and data sovereignty. Cross-region data transfers follow Standard Contractual Clauses (SCCs)." }
+        ]
+      },
+      {
+        "heading": "4. Access Control & Authentication",
+        "blocks": [
+          { "type": "h3", "text": "Multi-Factor Authentication" },
+          { "type": "p", "text": "MFA is mandatory for all employee and administrative accounts. We support TOTP, WebAuthn/FIDO2 hardware keys, and biometric authentication. Enterprise clients can integrate with their existing SSO/SAML providers." },
+          { "type": "h3", "text": "Role-Based Access Control" },
+          { "type": "p", "text": "Granular permissions based on the principle of least privilege. Access rights are regularly audited and automatically revoked after 90 days of inactivity. All privileged actions require approval workflows." },
+          { "type": "h3", "text": "API Security" },
+          { "type": "p", "text": "API keys are hashed and never stored in plaintext. Rate limiting prevents abuse. API requests are authenticated using OAuth 2.0 with JWT tokens. Webhook signatures ensure payload integrity." }
+        ]
+      },
+      {
+        "heading": "5. Application Security",
+        "blocks": [
+          { "type": "h3", "text": "Secure Development Lifecycle" },
+          { "type": "p", "text": "Security is integrated into every phase of development. Code reviews are mandatory with security checklist enforcement. We follow OWASP guidelines and conduct threat modeling for all new features." },
+          { "type": "h3", "text": "Vulnerability Management" },
+          { "type": "p", "text": "Automated dependency scanning runs on every commit. Dynamic Application Security Testing (DAST) runs weekly in staging environments. Annual third-party penetration testing by certified security firms." }
+        ]
+      },
+      {
+        "heading": "6. Monitoring & Incident Response",
+        "blocks": [
+          { "type": "h3", "text": "24/7 Security Monitoring" },
+          { "type": "p", "text": "Real-time security event monitoring with automated anomaly detection. SIEM aggregates logs from all systems. Machine learning models identify suspicious patterns and behaviors." },
+          { "type": "h3", "text": "Incident Response" },
+          { "type": "p", "text": "Documented incident response procedures with defined escalation paths. Security incidents are triaged based on severity. Post-incident reviews ensure continuous improvement. Mean time to detection (MTTD) under 15 minutes." },
+          { "type": "h3", "text": "Breach Notification" },
+          { "type": "p", "text": "In the event of a data breach, we commit to notifying affected customers within 72 hours as required by GDPR. Transparent communication includes breach scope, impact assessment, and remediation steps." }
+        ]
+      },
+      {
+        "heading": "7. Compliance & Certifications",
+        "blocks": [
+          { "type": "ul", "items": [
+            { "label": "SOC 2 Type II", "text": "Annual audits verify security, availability, processing integrity, confidentiality, and privacy controls" },
+            { "label": "ISO 27001", "text": "Information Security Management System certification covering all aspects of information security" },
+            { "label": "GDPR", "text": "Full compliance with EU General Data Protection Regulation; DPAs available for enterprise clients" },
+            { "label": "CCPA/CPRA", "text": "Compliant with California consumer privacy requirements" },
+            { "label": "PCI DSS", "text": "Payment processing partners are PCI DSS Level 1 certified; we never store payment card data" },
+            { "label": "HIPAA", "text": "Business Associate Agreements available for healthcare clients" }
+          ] }
+        ]
+      },
+      {
+        "heading": "8. Your Role in Security",
+        "blocks": [
+          { "type": "p", "text": "Security is a shared responsibility. We recommend the following best practices:" },
+          { "type": "ul", "items": [
+            "Use strong, complex, unique passwords (password manager recommended)",
+            "Enable multi-factor authentication on your account",
+            "Store API keys securely, never commit them to version control, and rotate them regularly",
+            "Report any suspicious activity immediately",
+            "Keep your software and integrations updated"
+          ] }
+        ]
+      },
+      {
+        "heading": "9. Responsible Disclosure Program",
+        "blocks": [
+          { "type": "p", "text": "We welcome reports from security researchers who discover vulnerabilities in our systems. Our bug bounty program rewards responsible disclosure:" },
+          { "type": "ul", "items": [
+            "Critical Vulnerabilities: €5,000 – €15,000",
+            "High Severity: €1,000 – €5,000",
+            "Medium Severity: €500 – €1,000",
+            "Low Severity: €100 – €500"
+          ] },
+          { "type": "p", "text": "Submit your findings to security@skylinedevhub.com. We will acknowledge your report within 48 hours and provide a detailed response within 5 business days." }
+        ]
+      },
+      {
+        "heading": "10. Security Contact",
+        "blocks": [
+          { "type": "p", "text": "For security-related inquiries, vulnerability reports, or incident notifications:" },
+          { "type": "p", "text": "Skyline DevHub Security Team", "strong": true },
+          { "type": "p", "text": "Email: security@skylinedevhub.com" }
+        ]
+      }
+    ]
+  }
+}
