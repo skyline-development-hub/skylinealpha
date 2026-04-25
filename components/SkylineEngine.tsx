@@ -310,10 +310,11 @@ void main() {
       d.addEventListener("click", handler);
     });
 
-    // On mobile the hero page overlay (data-page="0") is hidden via CSS,
-    // so openPage(0) is a no-op visually and leaves the user stuck on
-    // whatever scroll-card is underneath. Route the two real #p0 call
-    // sites to their intended destinations:
+    // On mobile the hero page overlay is the only thing visible at start
+    // (scroll-cards is .hidden until desktop closePage runs), so calling
+    // openPage(0) again from inside the hero would be a no-op toggle that
+    // leaves the user stranded. Route the two real #p0 call sites to
+    // their intended destinations instead:
     //   - scroll-card[0]'s "Learn more" → progress forward to about (#p1)
     //   - contact page's "Back to start" / wordmark → reset to top so
     //     scroll-card[0] becomes active naturally

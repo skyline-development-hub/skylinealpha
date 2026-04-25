@@ -288,9 +288,17 @@ body {
   transition: opacity 0.45s ease, translate 0.45s ease;
 }
 
+/* Hit-testing: when #scroll-cards is hidden, the hero page (z:2) is the
+   active overlay and its CTAs must receive taps. A child's pointer-events
+   override would otherwise punch a clickable hole through the hidden
+   parent at z:3 — invisible on screen but stealing every tap that lands
+   in its bounds on real touch devices. */
+#scroll-cards:not(.hidden) .scroll-card.active {
+  pointer-events: auto;
+}
+
 .scroll-card.active {
   opacity: 1;
-  pointer-events: auto;
   translate: 0 0;
 }
 
