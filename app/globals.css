@@ -1232,8 +1232,25 @@ h2 { font-size: clamp(2.2rem, 6vw, 5rem); }
     overflow-y: auto;
     max-height: 100dvh;
     overscroll-behavior: contain;
+    /* New stacking context — without this, fixed-position elements
+       inside (e.g., a future sticky back button) and the backdrop-filter
+       interact unpredictably on iOS. */
+    position: relative;
+    -webkit-overflow-scrolling: touch;
   }
-  #theme-toggle { bottom: 1rem; left: 1.25rem; translate: 0 0; }
+  /* iOS HIG: minimum 44px tap target. Below this, real-device taps land
+     in the gap between visual button edges and the actual interactive
+     region — DevTools synthetic clicks always hit, real fingers don't. */
+  .cta, .sc-cta {
+    min-height: 2.75rem;
+    padding: 0.75rem 1.25rem;
+  }
+  .nav-wordmark { padding: 0.5rem; min-height: 2.75rem; display: inline-flex; align-items: center; }
+  .lang-btn { padding: 0.55rem 0.75rem; font-size: 0.58rem; min-height: 2.75rem; }
+  .case-arrow { width: 2.75rem; height: 2.75rem; }
+  .chatbot-trigger { min-height: 2.75rem; }
+  .chatbot-close { min-height: 2.75rem; min-width: 2.75rem; display: flex; align-items: center; justify-content: center; }
+  #theme-toggle { bottom: 1rem; left: 1.25rem; translate: 0 0; width: 2.75rem; height: 2.75rem; }
   #credit { display: none; }
   .case-slide-header { flex-direction: column; gap: 0.2rem; }
   .case-results { gap: 1rem; flex-wrap: wrap; }

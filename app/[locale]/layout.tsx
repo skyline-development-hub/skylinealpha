@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, DM_Mono } from "next/font/google";
 import { locales } from "@/i18n/config";
+import MobileTouchDebug from "@/components/MobileTouchDebug";
 import "../globals.css";
 
 export const viewport: Viewport = {
@@ -70,7 +71,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${bebasNeue.variable} ${dmMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <MobileTouchDebug />
+      </body>
     </html>
   );
 }
